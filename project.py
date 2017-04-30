@@ -1,50 +1,47 @@
 import time
-import numpy as np
-import itertools
 import os
-import theano
+import numpy as np
+from itertools import combinations, permutations
 import theano.tensor as ts
-from theano import pp
+import theano
+# from theano import pp
 
-dim = 5
-print(np.zeros((dim, dim), dtype=np.int))
 
-a = np.array(
-    [
-        [0, 1, 0],
-        [0, 0, 1],
-        [0, 0, 0]
-    ], dtype=np.int32
-)
-b = np.array(
-    [
-        [0, 0, 1],
-        [1, 0, 0],
-        [0, 0, 0]
-    ], dtype=np.int32
-)
+def get_0_1_matrix_combos(dim, n, dtype=np.int32):
+    assert n <= dim * dim
 
-print(np.reshape(a, (3, 3)))
+    for idx in combinations(range(dim * dim), n):
+        m = np.zeros(dim * dim, dtype=dtype)
+        if idx:
+            m[np.array(idx)] = 1
+        yield m.reshape(dim, dim)
 
 x = ts.imatrix('x')
 y = ts.imatrix('y')
 sub = x - y
 f = theano.function([x, y], sub)
 
-if len(a) == 0:
-    os.sys.exit()
+d = 5
+i = 2
+matches = 0
+t_start = time.time()
+for a in get_0_1_matrix_combos(d, i):
+    for b in get_0_1_matrix_combos(d, i):
+        if len(a) == 0:
+            os.sys.exit()
 
-if len(a) != len(a[0]):
-    os.sys.exit()
+        if len(a) != len(a[0]):
+            os.sys.exit()
 
-for p in itertools.permutations(range(len(a))):
-    a_perm = a[list(p)].T[list(p)].T
-    t_start = time.time()
-    var = np.count_nonzero(f(a_perm, b))
-    t_end = time.time()
-    if var == 0:
-        print(a)
-        print(b)
-        print({p[i]+1: i+1 for i in range(len(p))})
-    print(t_end - t_start)
+        for p in permutations(range(len(a))):
+            a_perm = a[list(p)].T[list(p)].T
+            var = np.count_nonzero(f(a_perm, b))
+            if var == 0:
+                matches += 1
+                # print(a)
+                # print(b)
+                # print({p[i]+1: i+1 for i in range(len(p))})
+t_end = time.time()
+print(matches)
+print(t_end - t_start)
 
