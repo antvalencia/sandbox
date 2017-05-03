@@ -1,0 +1,4 @@
+./mat_mult_cpu.o
+./mat_mult_gpu.o
+./mat_mult_gpu_sh.o
+python3 mat_mult_theano.py

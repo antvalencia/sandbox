@@ -1,0 +1,7 @@
+rm mat_mult_cpu.o
+rm mat_mult_gpu.o
+rm mat_mult_gpu_sh.o
+
+g++ mat_mult_cpu.cpp -o mat_mult_cpu.o
+nvcc mat_mult_gpu.cu -o mat_mult_gpu.o
+nvcc mat_mult_gpu_sh.cu -o mat_mult_gpu_sh.o
