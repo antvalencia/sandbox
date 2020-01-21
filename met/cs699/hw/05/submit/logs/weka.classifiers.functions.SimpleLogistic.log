@@ -1,0 +1,134 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SimpleLogistic -I 0 -M 500 -H 50 -W 0.0
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SimpleLogistic:
+
+Class 1 :
+1.1  + 
+[checking=A11] * -0.23 +
+[checking=A14] * 0.6  +
+[checking=A13] * 0.24 +
+[checking_duration] * -0.02 +
+[cr_history=A34] * 0.34 +
+[cr_history=A30] * -0.43 +
+[cr_history=A31] * -0.33 +
+[purpose=A46] * -0.44 +
+[purpose=A40] * -0.39 +
+[purpose=A41] * 0.35 +
+[purpose=A45] * -0.28 +
+[purpose=A410] * 0.26 +
+[purpose=A48] * 0.52 +
+[cr_amount] * -0 +
+[savings=A65] * 0.18 +
+[savings=A61] * -0.25 +
+[savings=A64] * 0.26 +
+[emp_status=A74] * 0.22 +
+[emp_status=A72] * -0.1 +
+[install_rate] * -0.12 +
+[marital_status=A93] * 0.22 +
+[marital_status=A91] * -0.14 +
+[debtor=A103] * 0.48 +
+[debtor=A102] * -0.2 +
+[property=A121] * 0.13 +
+[property=A124] * -0.14 +
+[age] * 0.01 +
+[other_install=A143] * 0.26 +
+[housing=A151] * -0.21 +
+[existing_cr] * -0.08 +
+[people] * -0.09 +
+[tel=A191] * -0.11 +
+[foreign=A202] * 0.47
+
+Class 2 :
+-1.1 + 
+[checking=A11] * 0.23 +
+[checking=A14] * -0.6 +
+[checking=A13] * -0.24 +
+[checking_duration] * 0.02 +
+[cr_history=A34] * -0.34 +
+[cr_history=A30] * 0.43 +
+[cr_history=A31] * 0.33 +
+[purpose=A46] * 0.44 +
+[purpose=A40] * 0.39 +
+[purpose=A41] * -0.35 +
+[purpose=A45] * 0.28 +
+[purpose=A410] * -0.26 +
+[purpose=A48] * -0.52 +
+[cr_amount] * 0    +
+[savings=A65] * -0.18 +
+[savings=A61] * 0.25 +
+[savings=A64] * -0.26 +
+[emp_status=A74] * -0.22 +
+[emp_status=A72] * 0.1  +
+[install_rate] * 0.12 +
+[marital_status=A93] * -0.22 +
+[marital_status=A91] * 0.14 +
+[debtor=A103] * -0.48 +
+[debtor=A102] * 0.2  +
+[property=A121] * -0.13 +
+[property=A124] * 0.14 +
+[age] * -0.01 +
+[other_install=A143] * -0.26 +
+[housing=A151] * 0.21 +
+[existing_cr] * 0.08 +
+[people] * 0.09 +
+[tel=A191] * 0.11 +
+[foreign=A202] * -0.47
+
+
+Time taken to build model: 0.39 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         759               75.9    %
+Incorrectly Classified Instances       241               24.1    %
+Kappa statistic                          0.392 
+Mean absolute error                      0.3127
+Root mean squared error                  0.4037
+Relative absolute error                 74.4267 %
+Root relative squared error             88.084  %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.870    0.500    0.802      0.870    0.835      0.396    0.792     0.893     1
+                 0.500    0.130    0.622      0.500    0.555      0.396    0.792     0.609     2
+Weighted Avg.    0.759    0.389    0.748      0.759    0.751      0.396    0.792     0.808     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 609  91 |   a = 1
+ 150 150 |   b = 2
+
+

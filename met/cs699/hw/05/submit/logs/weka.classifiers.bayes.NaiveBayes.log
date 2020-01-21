@@ -1,0 +1,202 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                        Class
+Attribute                   1         2
+                        (0.7)     (0.3)
+========================================
+checking
+  A11                    140.0     136.0
+  A12                    165.0     106.0
+  A14                    349.0      47.0
+  A13                     50.0      15.0
+  [total]                704.0     304.0
+
+checking_duration
+  mean                 19.1766   24.8129
+  std. dev.            10.9817   13.3608
+  weight sum               700       300
+  precision              2.125     2.125
+
+cr_history
+  A34                    244.0      51.0
+  A32                    362.0     170.0
+  A33                     61.0      29.0
+  A30                     16.0      26.0
+  A31                     22.0      29.0
+  [total]                705.0     305.0
+
+purpose
+  A43                    219.0      63.0
+  A46                     29.0      23.0
+  A42                    124.0      59.0
+  A40                    146.0      90.0
+  A41                     87.0      18.0
+  A49                     64.0      35.0
+  A44                      9.0       5.0
+  A45                     15.0       9.0
+  A410                     8.0       6.0
+  A48                      9.0       2.0
+  [total]                710.0     310.0
+
+cr_amount
+  mean               2985.6721 3938.1609
+  std. dev.          2399.7801 3529.4788
+  weight sum               700       300
+  precision            19.7543   19.7543
+
+savings
+  A65                    152.0      33.0
+  A61                    387.0     218.0
+  A63                     53.0      12.0
+  A64                     43.0       7.0
+  A62                     70.0      35.0
+  [total]                705.0     305.0
+
+emp_status
+  A75                    190.0      65.0
+  A73                    236.0     105.0
+  A74                    136.0      40.0
+  A71                     40.0      24.0
+  A72                    103.0      71.0
+  [total]                705.0     305.0
+
+install_rate
+  mean                    2.92    3.0967
+  std. dev.             1.1273    1.0866
+  weight sum               700       300
+  precision                  1         1
+
+marital_status
+  A93                    403.0     147.0
+  A92                    202.0     110.0
+  A91                     31.0      21.0
+  A94                     68.0      26.0
+  [total]                704.0     304.0
+
+debtor
+  A101                   636.0     273.0
+  A103                    43.0      11.0
+  A102                    24.0      19.0
+  [total]                703.0     303.0
+
+residence
+  mean                  2.8429      2.85
+  std. dev.             1.1076    1.0928
+  weight sum               700       300
+  precision                  1         1
+
+property
+  A121                   223.0      61.0
+  A122                   162.0      72.0
+  A124                    88.0      68.0
+  A123                   231.0     103.0
+  [total]                704.0     304.0
+
+age
+  mean                 36.1723   33.9267
+  std. dev.            11.4005    11.259
+  weight sum               700       300
+  precision             1.0769    1.0769
+
+other_install
+  A143                   591.0     225.0
+  A141                    83.0      58.0
+  A142                    29.0      20.0
+  [total]                703.0     303.0
+
+housing
+  A152                   528.0     187.0
+  A153                    65.0      45.0
+  A151                   110.0      71.0
+  [total]                703.0     303.0
+
+existing_cr
+  mean                  1.4243    1.3667
+  std. dev.             0.5843    0.5588
+  weight sum               700       300
+  precision                  1         1
+
+job
+  A173                   445.0     187.0
+  A172                   145.0      57.0
+  A174                    98.0      52.0
+  A171                    16.0       8.0
+  [total]                704.0     304.0
+
+people
+  mean                  1.1557    1.1533
+  std. dev.             0.3626    0.3603
+  weight sum               700       300
+  precision                  1         1
+
+tel
+  A192                   292.0     114.0
+  A191                   410.0     188.0
+  [total]                702.0     302.0
+
+foreign
+  A201                   668.0     297.0
+  A202                    34.0       5.0
+  [total]                702.0     302.0
+
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         754               75.4    %
+Incorrectly Classified Instances       246               24.6    %
+Kappa statistic                          0.3813
+Mean absolute error                      0.2937
+Root mean squared error                  0.4201
+Relative absolute error                 69.9042 %
+Root relative squared error             91.67   %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.864    0.503    0.800      0.864    0.831      0.385    0.787     0.891     1
+                 0.497    0.136    0.611      0.497    0.548      0.385    0.787     0.577     2
+Weighted Avg.    0.754    0.393    0.743      0.754    0.746      0.385    0.787     0.797     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 605  95 |   a = 1
+ 151 149 |   b = 2
+
+

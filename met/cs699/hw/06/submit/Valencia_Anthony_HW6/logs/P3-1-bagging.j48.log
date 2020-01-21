@@ -1,0 +1,63 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Bagging -P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bagging with 10 iterations and base learner
+
+weka.classifiers.trees.J48 -C 0.25 -M 2
+
+Time taken to build model: 0.25 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         733               73.3    %
+Incorrectly Classified Instances       267               26.7    %
+Kappa statistic                          0.3154
+Mean absolute error                      0.3267
+Root mean squared error                  0.4193
+Relative absolute error                 77.7633 %
+Root relative squared error             91.4927 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.863    0.570    0.779      0.863    0.819      0.321    0.753     0.858     1
+                 0.430    0.137    0.573      0.430    0.491      0.321    0.753     0.586     2
+Weighted Avg.    0.733    0.440    0.718      0.733    0.721      0.321    0.753     0.777     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 604  96 |   a = 1
+ 171 129 |   b = 2
+
+

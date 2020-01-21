@@ -1,0 +1,202 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+checking = A11
+|   foreign = A201
+|   |   checking_duration <= 11
+|   |   |   existing_cr <= 1
+|   |   |   |   property = A121: 1 (8.0/1.0)
+|   |   |   |   property = A122
+|   |   |   |   |   tel = A192: 1 (4.0)
+|   |   |   |   |   tel = A191: 2 (2.0)
+|   |   |   |   property = A124: 2 (3.0)
+|   |   |   |   property = A123: 1 (2.0/1.0)
+|   |   |   existing_cr > 1: 1 (14.0)
+|   |   checking_duration > 11
+|   |   |   job = A173
+|   |   |   |   debtor = A101
+|   |   |   |   |   checking_duration <= 30
+|   |   |   |   |   |   savings = A65
+|   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   tel = A192: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   tel = A191: 2 (9.0/1.0)
+|   |   |   |   |   |   |   existing_cr > 1: 1 (2.0)
+|   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   cr_history = A34: 1 (14.0/4.0)
+|   |   |   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   |   |   tel = A192: 2 (5.0)
+|   |   |   |   |   |   |   |   tel = A191
+|   |   |   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   |   |   property = A121
+|   |   |   |   |   |   |   |   |   |   |   age <= 26: 2 (5.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 26: 1 (2.0)
+|   |   |   |   |   |   |   |   |   |   property = A122: 2 (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   property = A124: 1 (2.0)
+|   |   |   |   |   |   |   |   |   |   property = A123
+|   |   |   |   |   |   |   |   |   |   |   cr_amount <= 1386: 2 (3.0)
+|   |   |   |   |   |   |   |   |   |   |   cr_amount > 1386: 1 (11.0/1.0)
+|   |   |   |   |   |   |   |   |   existing_cr > 1: 2 (3.0)
+|   |   |   |   |   |   |   cr_history = A33: 2 (4.0)
+|   |   |   |   |   |   |   cr_history = A30: 2 (8.0/1.0)
+|   |   |   |   |   |   |   cr_history = A31: 2 (6.0)
+|   |   |   |   |   |   savings = A63: 1 (4.0/1.0)
+|   |   |   |   |   |   savings = A64: 1 (4.0)
+|   |   |   |   |   |   savings = A62
+|   |   |   |   |   |   |   cr_history = A34: 1 (2.0)
+|   |   |   |   |   |   |   cr_history = A32: 2 (3.0)
+|   |   |   |   |   |   |   cr_history = A33: 1 (0.0)
+|   |   |   |   |   |   |   cr_history = A30: 1 (0.0)
+|   |   |   |   |   |   |   cr_history = A31: 1 (1.0)
+|   |   |   |   |   checking_duration > 30: 2 (30.0/3.0)
+|   |   |   |   debtor = A103: 1 (12.0/3.0)
+|   |   |   |   debtor = A102: 2 (7.0/1.0)
+|   |   |   job = A172
+|   |   |   |   purpose = A43
+|   |   |   |   |   existing_cr <= 1: 2 (10.0/3.0)
+|   |   |   |   |   existing_cr > 1: 1 (2.0)
+|   |   |   |   purpose = A46: 2 (1.0)
+|   |   |   |   purpose = A42
+|   |   |   |   |   emp_status = A75: 1 (2.0)
+|   |   |   |   |   emp_status = A73: 1 (4.0)
+|   |   |   |   |   emp_status = A74: 1 (1.0)
+|   |   |   |   |   emp_status = A71: 1 (0.0)
+|   |   |   |   |   emp_status = A72: 2 (3.0)
+|   |   |   |   purpose = A40
+|   |   |   |   |   tel = A192: 1 (2.0)
+|   |   |   |   |   tel = A191: 2 (10.0/2.0)
+|   |   |   |   purpose = A41: 2 (1.0)
+|   |   |   |   purpose = A49: 1 (3.0)
+|   |   |   |   purpose = A44: 2 (1.0)
+|   |   |   |   purpose = A45: 2 (1.0)
+|   |   |   |   purpose = A410: 1 (1.0)
+|   |   |   |   purpose = A48: 1 (1.0)
+|   |   |   job = A174: 1 (30.0/8.0)
+|   |   |   job = A171: 2 (5.0/1.0)
+|   foreign = A202: 1 (15.0/2.0)
+checking = A12
+|   cr_amount <= 9857
+|   |   savings = A65: 1 (41.0/5.0)
+|   |   savings = A61
+|   |   |   debtor = A101
+|   |   |   |   checking_duration <= 42
+|   |   |   |   |   marital_status = A93: 1 (52.0/15.0)
+|   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   purpose = A43: 1 (8.0/2.0)
+|   |   |   |   |   |   purpose = A46: 1 (4.0/2.0)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   checking_duration <= 10: 2 (3.0)
+|   |   |   |   |   |   |   checking_duration > 10
+|   |   |   |   |   |   |   |   checking_duration <= 21: 1 (6.0/1.0)
+|   |   |   |   |   |   |   |   checking_duration > 21: 2 (2.0)
+|   |   |   |   |   |   purpose = A40: 2 (5.0/1.0)
+|   |   |   |   |   |   purpose = A41: 2 (1.0)
+|   |   |   |   |   |   purpose = A49
+|   |   |   |   |   |   |   residence <= 2: 1 (3.0)
+|   |   |   |   |   |   |   residence > 2: 2 (2.0)
+|   |   |   |   |   |   purpose = A44: 1 (0.0)
+|   |   |   |   |   |   purpose = A45: 1 (1.0)
+|   |   |   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   |   |   marital_status = A91: 2 (8.0/2.0)
+|   |   |   |   |   marital_status = A94
+|   |   |   |   |   |   checking_duration <= 10: 1 (6.0)
+|   |   |   |   |   |   checking_duration > 10: 2 (10.0/3.0)
+|   |   |   |   checking_duration > 42: 2 (7.0)
+|   |   |   debtor = A103
+|   |   |   |   purpose = A43: 1 (18.0/1.0)
+|   |   |   |   purpose = A46: 1 (0.0)
+|   |   |   |   purpose = A42: 1 (0.0)
+|   |   |   |   purpose = A40: 2 (2.0)
+|   |   |   |   purpose = A41: 1 (0.0)
+|   |   |   |   purpose = A49: 1 (0.0)
+|   |   |   |   purpose = A44: 1 (0.0)
+|   |   |   |   purpose = A45: 1 (0.0)
+|   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   debtor = A102: 1 (2.0)
+|   |   savings = A63: 1 (11.0/3.0)
+|   |   savings = A64: 1 (13.0/3.0)
+|   |   savings = A62
+|   |   |   purpose = A43: 2 (8.0/2.0)
+|   |   |   purpose = A46: 1 (0.0)
+|   |   |   purpose = A42: 2 (4.0/1.0)
+|   |   |   purpose = A40: 2 (15.0/5.0)
+|   |   |   purpose = A41: 1 (3.0)
+|   |   |   purpose = A49
+|   |   |   |   housing = A152: 1 (6.0)
+|   |   |   |   housing = A153: 2 (1.0)
+|   |   |   |   housing = A151
+|   |   |   |   |   existing_cr <= 1: 1 (2.0)
+|   |   |   |   |   existing_cr > 1: 2 (2.0)
+|   |   |   purpose = A44: 1 (0.0)
+|   |   |   purpose = A45: 1 (2.0)
+|   |   |   purpose = A410: 1 (1.0)
+|   |   |   purpose = A48: 1 (0.0)
+|   cr_amount > 9857: 2 (20.0/3.0)
+checking = A14: 1 (394.0/46.0)
+checking = A13: 1 (63.0/14.0)
+
+Number of Leaves  : 	98
+
+Size of the tree : 	135
+
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         707               70.7    %
+Incorrectly Classified Instances       293               29.3    %
+Kappa statistic                          0.2503
+Mean absolute error                      0.3459
+Root mean squared error                  0.4793
+Relative absolute error                 82.3125 %
+Root relative squared error            104.5883 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.843    0.610    0.763      0.843    0.801      0.255    0.641     0.748     1
+                 0.390    0.157    0.515      0.390    0.444      0.255    0.641     0.450     2
+Weighted Avg.    0.707    0.474    0.689      0.707    0.694      0.255    0.641     0.659     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 590 110 |   a = 1
+ 183 117 |   b = 2
+
+

@@ -1,0 +1,65 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.23 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         765               76.5    %
+Incorrectly Classified Instances       235               23.5    %
+Kappa statistic                          0.369 
+Mean absolute error                      0.338 
+Root mean squared error                  0.4043
+Relative absolute error                 80.4396 %
+Root relative squared error             88.2301 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.917    0.590    0.784      0.917    0.845      0.389    0.789     0.889     1
+                 0.410    0.083    0.680      0.410    0.511      0.389    0.789     0.622     2
+Weighted Avg.    0.765    0.438    0.753      0.765    0.745      0.389    0.789     0.808     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 642  58 |   a = 1
+ 177 123 |   b = 2
+
+

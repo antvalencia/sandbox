@@ -1,0 +1,54 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     a9-clustering-weka.filters.unsupervised.attribute.Normalize-S100.0-T0.0-weka.filters.unsupervised.attribute.Normalize-S50.0-T0.0
+Instances:    452
+Attributes:   2
+              A1
+              A2
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 10
+Within cluster sum of squared errors: 8.267036504165342
+
+Initial starting points (random):
+
+Cluster 0: 0.67368,28.1
+Cluster 1: 10.786559,15.6
+Cluster 2: 47.108949,12.8
+Cluster 3: 40.090279,12.3
+Cluster 4: 3.170813,18.2
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                         Cluster#
+Attribute    Full Data          0          1          2          3          4
+               (452.0)     (82.0)     (39.0)     (29.0)     (26.0)    (276.0)
+=============================================================================
+A1              7.1008     2.4257    16.0642    43.7715    29.1606      1.292
+A2             23.7504    38.5244    19.3051    16.0414    17.4538    21.3924
+
+
+
+
+Time taken to build model (full training data) : 0.01 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       82 ( 18%)
+1       39 (  9%)
+2       29 (  6%)
+3       26 (  6%)
+4      276 ( 61%)
+
+

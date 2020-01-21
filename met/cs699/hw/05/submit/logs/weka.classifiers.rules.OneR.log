@@ -1,0 +1,91 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.OneR -B 6
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+cr_amount:
+	< 718.0	-> 1
+	< 759.5	-> 2
+	< 883.0	-> 1
+	< 922.0	-> 2
+	< 938.0	-> 1
+	< 979.5	-> 2
+	< 1206.5	-> 1
+	< 1223.5	-> 2
+	< 1267.5	-> 1
+	< 1286.0	-> 2
+	< 1821.5	-> 1
+	< 1865.5	-> 2
+	< 3913.5	-> 1
+	< 3969.0	-> 2
+	< 4049.5	-> 1
+	< 4329.5	-> 2
+	< 4726.0	-> 1
+	< 5024.0	-> 2
+	< 6322.5	-> 1
+	< 6564.0	-> 2
+	< 6750.0	-> 1
+	< 6917.5	-> 2
+	< 7760.5	-> 1
+	< 8109.5	-> 2
+	< 9340.5	-> 1
+	< 10331.5	-> 2
+	< 11191.0	-> 1
+	>= 11191.0	-> 2
+(743/1000 instances correct)
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         661               66.1    %
+Incorrectly Classified Instances       339               33.9    %
+Kappa statistic                          0.0552
+Mean absolute error                      0.339 
+Root mean squared error                  0.5822
+Relative absolute error                 80.6802 %
+Root relative squared error            127.0545 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.867    0.820    0.712      0.867    0.782      0.061    0.524     0.710     1
+                 0.180    0.133    0.367      0.180    0.242      0.061    0.524     0.312     2
+Weighted Avg.    0.661    0.614    0.608      0.661    0.620      0.061    0.524     0.591     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 607  93 |   a = 1
+ 246  54 |   b = 2
+
+

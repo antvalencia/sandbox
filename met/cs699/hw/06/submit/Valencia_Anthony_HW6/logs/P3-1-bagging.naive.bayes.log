@@ -1,0 +1,63 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.Bagging -P 100 -S 1 -num-slots 1 -I 10 -W weka.classifiers.bayes.NaiveBayes
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Bagging with 10 iterations and base learner
+
+weka.classifiers.bayes.NaiveBayes 
+
+Time taken to build model: 0.1 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         748               74.8    %
+Incorrectly Classified Instances       252               25.2    %
+Kappa statistic                          0.3675
+Mean absolute error                      0.2964
+Root mean squared error                  0.4196
+Relative absolute error                 70.5532 %
+Root relative squared error             91.5683 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.859    0.510    0.797      0.859    0.827      0.371    0.787     0.891     1
+                 0.490    0.141    0.598      0.490    0.538      0.371    0.787     0.576     2
+Weighted Avg.    0.748    0.399    0.737      0.748    0.740      0.371    0.787     0.796     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 601  99 |   a = 1
+ 153 147 |   b = 2
+
+

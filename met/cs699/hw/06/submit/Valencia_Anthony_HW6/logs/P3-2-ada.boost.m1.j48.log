@@ -1,0 +1,2102 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 10 -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     german-bank
+Instances:    1000
+Attributes:   21
+              checking
+              checking_duration
+              cr_history
+              purpose
+              cr_amount
+              savings
+              emp_status
+              install_rate
+              marital_status
+              debtor
+              residence
+              property
+              age
+              other_install
+              housing
+              existing_cr
+              job
+              people
+              tel
+              foreign
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+J48 pruned tree
+------------------
+
+checking = A11
+|   foreign = A201
+|   |   checking_duration <= 11
+|   |   |   existing_cr <= 1
+|   |   |   |   property = A121: 1 (8.0/1.0)
+|   |   |   |   property = A122
+|   |   |   |   |   tel = A192: 1 (4.0)
+|   |   |   |   |   tel = A191: 2 (2.0)
+|   |   |   |   property = A124: 2 (3.0)
+|   |   |   |   property = A123: 1 (2.0/1.0)
+|   |   |   existing_cr > 1: 1 (14.0)
+|   |   checking_duration > 11
+|   |   |   job = A173
+|   |   |   |   debtor = A101
+|   |   |   |   |   checking_duration <= 30
+|   |   |   |   |   |   savings = A65
+|   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   tel = A192: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   tel = A191: 2 (9.0/1.0)
+|   |   |   |   |   |   |   existing_cr > 1: 1 (2.0)
+|   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   cr_history = A34: 1 (14.0/4.0)
+|   |   |   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   |   |   tel = A192: 2 (5.0)
+|   |   |   |   |   |   |   |   tel = A191
+|   |   |   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   |   |   property = A121
+|   |   |   |   |   |   |   |   |   |   |   age <= 26: 2 (5.0)
+|   |   |   |   |   |   |   |   |   |   |   age > 26: 1 (2.0)
+|   |   |   |   |   |   |   |   |   |   property = A122: 2 (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   property = A124: 1 (2.0)
+|   |   |   |   |   |   |   |   |   |   property = A123
+|   |   |   |   |   |   |   |   |   |   |   cr_amount <= 1386: 2 (3.0)
+|   |   |   |   |   |   |   |   |   |   |   cr_amount > 1386: 1 (11.0/1.0)
+|   |   |   |   |   |   |   |   |   existing_cr > 1: 2 (3.0)
+|   |   |   |   |   |   |   cr_history = A33: 2 (4.0)
+|   |   |   |   |   |   |   cr_history = A30: 2 (8.0/1.0)
+|   |   |   |   |   |   |   cr_history = A31: 2 (6.0)
+|   |   |   |   |   |   savings = A63: 1 (4.0/1.0)
+|   |   |   |   |   |   savings = A64: 1 (4.0)
+|   |   |   |   |   |   savings = A62
+|   |   |   |   |   |   |   cr_history = A34: 1 (2.0)
+|   |   |   |   |   |   |   cr_history = A32: 2 (3.0)
+|   |   |   |   |   |   |   cr_history = A33: 1 (0.0)
+|   |   |   |   |   |   |   cr_history = A30: 1 (0.0)
+|   |   |   |   |   |   |   cr_history = A31: 1 (1.0)
+|   |   |   |   |   checking_duration > 30: 2 (30.0/3.0)
+|   |   |   |   debtor = A103: 1 (12.0/3.0)
+|   |   |   |   debtor = A102: 2 (7.0/1.0)
+|   |   |   job = A172
+|   |   |   |   purpose = A43
+|   |   |   |   |   existing_cr <= 1: 2 (10.0/3.0)
+|   |   |   |   |   existing_cr > 1: 1 (2.0)
+|   |   |   |   purpose = A46: 2 (1.0)
+|   |   |   |   purpose = A42
+|   |   |   |   |   emp_status = A75: 1 (2.0)
+|   |   |   |   |   emp_status = A73: 1 (4.0)
+|   |   |   |   |   emp_status = A74: 1 (1.0)
+|   |   |   |   |   emp_status = A71: 1 (0.0)
+|   |   |   |   |   emp_status = A72: 2 (3.0)
+|   |   |   |   purpose = A40
+|   |   |   |   |   tel = A192: 1 (2.0)
+|   |   |   |   |   tel = A191: 2 (10.0/2.0)
+|   |   |   |   purpose = A41: 2 (1.0)
+|   |   |   |   purpose = A49: 1 (3.0)
+|   |   |   |   purpose = A44: 2 (1.0)
+|   |   |   |   purpose = A45: 2 (1.0)
+|   |   |   |   purpose = A410: 1 (1.0)
+|   |   |   |   purpose = A48: 1 (1.0)
+|   |   |   job = A174: 1 (30.0/8.0)
+|   |   |   job = A171: 2 (5.0/1.0)
+|   foreign = A202: 1 (15.0/2.0)
+checking = A12
+|   cr_amount <= 9857
+|   |   savings = A65: 1 (41.0/5.0)
+|   |   savings = A61
+|   |   |   debtor = A101
+|   |   |   |   checking_duration <= 42
+|   |   |   |   |   marital_status = A93: 1 (52.0/15.0)
+|   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   purpose = A43: 1 (8.0/2.0)
+|   |   |   |   |   |   purpose = A46: 1 (4.0/2.0)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   checking_duration <= 10: 2 (3.0)
+|   |   |   |   |   |   |   checking_duration > 10
+|   |   |   |   |   |   |   |   checking_duration <= 21: 1 (6.0/1.0)
+|   |   |   |   |   |   |   |   checking_duration > 21: 2 (2.0)
+|   |   |   |   |   |   purpose = A40: 2 (5.0/1.0)
+|   |   |   |   |   |   purpose = A41: 2 (1.0)
+|   |   |   |   |   |   purpose = A49
+|   |   |   |   |   |   |   residence <= 2: 1 (3.0)
+|   |   |   |   |   |   |   residence > 2: 2 (2.0)
+|   |   |   |   |   |   purpose = A44: 1 (0.0)
+|   |   |   |   |   |   purpose = A45: 1 (1.0)
+|   |   |   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   |   |   marital_status = A91: 2 (8.0/2.0)
+|   |   |   |   |   marital_status = A94
+|   |   |   |   |   |   checking_duration <= 10: 1 (6.0)
+|   |   |   |   |   |   checking_duration > 10: 2 (10.0/3.0)
+|   |   |   |   checking_duration > 42: 2 (7.0)
+|   |   |   debtor = A103
+|   |   |   |   purpose = A43: 1 (18.0/1.0)
+|   |   |   |   purpose = A46: 1 (0.0)
+|   |   |   |   purpose = A42: 1 (0.0)
+|   |   |   |   purpose = A40: 2 (2.0)
+|   |   |   |   purpose = A41: 1 (0.0)
+|   |   |   |   purpose = A49: 1 (0.0)
+|   |   |   |   purpose = A44: 1 (0.0)
+|   |   |   |   purpose = A45: 1 (0.0)
+|   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   debtor = A102: 1 (2.0)
+|   |   savings = A63: 1 (11.0/3.0)
+|   |   savings = A64: 1 (13.0/3.0)
+|   |   savings = A62
+|   |   |   purpose = A43: 2 (8.0/2.0)
+|   |   |   purpose = A46: 1 (0.0)
+|   |   |   purpose = A42: 2 (4.0/1.0)
+|   |   |   purpose = A40: 2 (15.0/5.0)
+|   |   |   purpose = A41: 1 (3.0)
+|   |   |   purpose = A49
+|   |   |   |   housing = A152: 1 (6.0)
+|   |   |   |   housing = A153: 2 (1.0)
+|   |   |   |   housing = A151
+|   |   |   |   |   existing_cr <= 1: 1 (2.0)
+|   |   |   |   |   existing_cr > 1: 2 (2.0)
+|   |   |   purpose = A44: 1 (0.0)
+|   |   |   purpose = A45: 1 (2.0)
+|   |   |   purpose = A410: 1 (1.0)
+|   |   |   purpose = A48: 1 (0.0)
+|   cr_amount > 9857: 2 (20.0/3.0)
+checking = A14: 1 (394.0/46.0)
+checking = A13: 1 (63.0/14.0)
+
+Number of Leaves  : 	98
+
+Size of the tree : 	135
+
+
+Weight: 1.77
+
+J48 pruned tree
+------------------
+
+other_install = A143
+|   cr_history = A34
+|   |   checking = A11
+|   |   |   marital_status = A93
+|   |   |   |   emp_status = A75
+|   |   |   |   |   residence <= 3: 2 (7.48/0.58)
+|   |   |   |   |   residence > 3: 1 (7.6/1.75)
+|   |   |   |   emp_status = A73: 1 (4.68)
+|   |   |   |   emp_status = A74: 1 (2.92/0.58)
+|   |   |   |   emp_status = A71: 1 (4.62)
+|   |   |   |   emp_status = A72: 1 (1.75)
+|   |   |   marital_status = A92
+|   |   |   |   property = A121: 2 (5.79/1.75)
+|   |   |   |   property = A122: 1 (2.92)
+|   |   |   |   property = A124: 2 (5.79/1.17)
+|   |   |   |   property = A123: 1 (1.17/0.58)
+|   |   |   marital_status = A91: 2 (4.03/0.58)
+|   |   |   marital_status = A94: 1 (5.2)
+|   |   checking = A12
+|   |   |   existing_cr <= 2
+|   |   |   |   install_rate <= 2: 2 (19.06/4.09)
+|   |   |   |   install_rate > 2
+|   |   |   |   |   age <= 33: 2 (16.78/6.37)
+|   |   |   |   |   age > 33: 1 (10.47)
+|   |   |   existing_cr > 2: 1 (5.2)
+|   |   checking = A14
+|   |   |   cr_amount <= 6967: 1 (76.55/3.45)
+|   |   |   cr_amount > 6967
+|   |   |   |   age <= 32: 2 (7.48/0.58)
+|   |   |   |   age > 32: 1 (2.92)
+|   |   checking = A13
+|   |   |   checking_duration <= 11: 1 (3.51)
+|   |   |   checking_duration > 11
+|   |   |   |   checking_duration <= 22: 2 (10.93/0.58)
+|   |   |   |   checking_duration > 22: 1 (2.92)
+|   cr_history = A32
+|   |   cr_amount <= 5866
+|   |   |   foreign = A201
+|   |   |   |   debtor = A101
+|   |   |   |   |   purpose = A43
+|   |   |   |   |   |   job = A173
+|   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   age <= 26
+|   |   |   |   |   |   |   |   |   residence <= 2
+|   |   |   |   |   |   |   |   |   |   cr_amount <= 1459: 1 (4.09/0.58)
+|   |   |   |   |   |   |   |   |   |   cr_amount > 1459: 2 (19.64/2.92)
+|   |   |   |   |   |   |   |   |   residence > 2: 1 (7.02/1.17)
+|   |   |   |   |   |   |   |   age > 26
+|   |   |   |   |   |   |   |   |   install_rate <= 3: 1 (13.97)
+|   |   |   |   |   |   |   |   |   install_rate > 3
+|   |   |   |   |   |   |   |   |   |   checking = A11: 2 (2.92/0.58)
+|   |   |   |   |   |   |   |   |   |   checking = A12: 2 (4.62/1.17)
+|   |   |   |   |   |   |   |   |   |   checking = A14: 1 (8.19)
+|   |   |   |   |   |   |   |   |   |   checking = A13: 1 (1.17)
+|   |   |   |   |   |   |   existing_cr > 1
+|   |   |   |   |   |   |   |   residence <= 3: 1 (2.34/0.58)
+|   |   |   |   |   |   |   |   residence > 3: 2 (4.62)
+|   |   |   |   |   |   job = A172
+|   |   |   |   |   |   |   property = A121
+|   |   |   |   |   |   |   |   cr_amount <= 719: 1 (3.45)
+|   |   |   |   |   |   |   |   cr_amount > 719: 2 (13.85/2.92)
+|   |   |   |   |   |   |   property = A122: 1 (3.45)
+|   |   |   |   |   |   |   property = A124: 2 (0.58)
+|   |   |   |   |   |   |   property = A123: 1 (2.92/0.58)
+|   |   |   |   |   |   job = A174: 1 (6.43)
+|   |   |   |   |   |   job = A171: 1 (0.58)
+|   |   |   |   |   purpose = A46
+|   |   |   |   |   |   checking = A11: 2 (5.79)
+|   |   |   |   |   |   checking = A12: 1 (2.34)
+|   |   |   |   |   |   checking = A14: 2 (5.2/1.75)
+|   |   |   |   |   |   checking = A13: 1 (1.17)
+|   |   |   |   |   purpose = A42
+|   |   |   |   |   |   job = A173
+|   |   |   |   |   |   |   savings = A65
+|   |   |   |   |   |   |   |   cr_amount <= 1977: 2 (3.45)
+|   |   |   |   |   |   |   |   cr_amount > 1977: 1 (2.34/0.58)
+|   |   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   |   cr_amount <= 4380
+|   |   |   |   |   |   |   |   |   property = A121: 1 (7.02/1.17)
+|   |   |   |   |   |   |   |   |   property = A122: 1 (12.68/0.58)
+|   |   |   |   |   |   |   |   |   property = A124: 1 (0.58)
+|   |   |   |   |   |   |   |   |   property = A123
+|   |   |   |   |   |   |   |   |   |   checking_duration <= 15: 1 (2.34/0.58)
+|   |   |   |   |   |   |   |   |   |   checking_duration > 15: 2 (6.37/1.17)
+|   |   |   |   |   |   |   |   cr_amount > 4380: 2 (4.03)
+|   |   |   |   |   |   |   savings = A63: 1 (2.34)
+|   |   |   |   |   |   |   savings = A64: 1 (2.34)
+|   |   |   |   |   |   |   savings = A62: 1 (4.62/0.58)
+|   |   |   |   |   |   job = A172
+|   |   |   |   |   |   |   checking_duration <= 11: 1 (4.03)
+|   |   |   |   |   |   |   checking_duration > 11
+|   |   |   |   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   |   |   |   people <= 1: 1 (5.26/0.58)
+|   |   |   |   |   |   |   |   |   people > 1: 2 (3.45)
+|   |   |   |   |   |   |   |   install_rate > 3: 2 (7.48)
+|   |   |   |   |   |   job = A174: 2 (9.24/2.34)
+|   |   |   |   |   |   job = A171: 2 (0.58)
+|   |   |   |   |   purpose = A40
+|   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   checking = A11
+|   |   |   |   |   |   |   |   install_rate <= 3: 1 (4.68/1.17)
+|   |   |   |   |   |   |   |   install_rate > 3: 2 (5.79/0.58)
+|   |   |   |   |   |   |   checking = A12: 1 (5.79)
+|   |   |   |   |   |   |   checking = A14: 1 (5.26)
+|   |   |   |   |   |   |   checking = A13: 1 (0.58)
+|   |   |   |   |   |   marital_status = A92: 2 (30.17/7.02)
+|   |   |   |   |   |   marital_status = A91: 2 (1.75/0.58)
+|   |   |   |   |   |   marital_status = A94: 1 (8.13/0.58)
+|   |   |   |   |   purpose = A41: 1 (30.11/4.03)
+|   |   |   |   |   purpose = A49
+|   |   |   |   |   |   checking_duration <= 18: 1 (7.6)
+|   |   |   |   |   |   checking_duration > 18
+|   |   |   |   |   |   |   age <= 34: 1 (2.34/0.58)
+|   |   |   |   |   |   |   age > 34: 2 (7.48)
+|   |   |   |   |   purpose = A44
+|   |   |   |   |   |   checking = A11: 2 (2.92/0.58)
+|   |   |   |   |   |   checking = A12: 1 (0.0)
+|   |   |   |   |   |   checking = A14: 1 (2.34)
+|   |   |   |   |   |   checking = A13: 1 (0.58)
+|   |   |   |   |   purpose = A45
+|   |   |   |   |   |   install_rate <= 3: 1 (2.34)
+|   |   |   |   |   |   install_rate > 3: 2 (11.51/1.17)
+|   |   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   |   purpose = A48: 1 (2.92/0.58)
+|   |   |   |   debtor = A103
+|   |   |   |   |   savings = A65: 2 (3.45)
+|   |   |   |   |   savings = A61: 1 (12.28)
+|   |   |   |   |   savings = A63: 1 (0.0)
+|   |   |   |   |   savings = A64: 1 (0.0)
+|   |   |   |   |   savings = A62: 1 (1.17/0.58)
+|   |   |   |   debtor = A102
+|   |   |   |   |   emp_status = A75: 1 (1.75/0.58)
+|   |   |   |   |   emp_status = A73: 1 (6.96/1.75)
+|   |   |   |   |   emp_status = A74: 2 (0.58)
+|   |   |   |   |   emp_status = A71: 2 (3.45)
+|   |   |   |   |   emp_status = A72: 2 (6.9)
+|   |   |   foreign = A202: 1 (10.53/0.58)
+|   |   cr_amount > 5866
+|   |   |   existing_cr <= 1
+|   |   |   |   checking = A11: 2 (21.4/3.51)
+|   |   |   |   checking = A12: 2 (15.73/3.51)
+|   |   |   |   checking = A14: 1 (5.85)
+|   |   |   |   checking = A13: 2 (0.0)
+|   |   |   existing_cr > 1: 2 (15.55/1.17)
+|   cr_history = A33
+|   |   install_rate <= 3
+|   |   |   residence <= 1: 2 (5.2/0.58)
+|   |   |   residence > 1: 1 (30.75/2.34)
+|   |   install_rate > 3
+|   |   |   savings = A65
+|   |   |   |   cr_amount <= 7308: 1 (3.51)
+|   |   |   |   cr_amount > 7308: 2 (3.45)
+|   |   |   savings = A61
+|   |   |   |   existing_cr <= 1: 2 (16.13/0.58)
+|   |   |   |   existing_cr > 1
+|   |   |   |   |   checking_duration <= 18: 1 (4.62)
+|   |   |   |   |   checking_duration > 18: 2 (8.65/1.17)
+|   |   |   savings = A63: 1 (1.17)
+|   |   |   savings = A64: 2 (3.45)
+|   |   |   savings = A62: 1 (4.62)
+|   cr_history = A30: 2 (30.69/5.26)
+|   cr_history = A31
+|   |   cr_amount <= 9857: 2 (17.95/1.75)
+|   |   cr_amount > 9857: 1 (3.45)
+other_install = A141
+|   residence <= 1
+|   |   age <= 51: 1 (11.64)
+|   |   age > 51: 2 (4.03)
+|   residence > 1
+|   |   age <= 44: 2 (128.84/29.18)
+|   |   age > 44: 1 (25.55/6.96)
+other_install = A142
+|   purpose = A43
+|   |   cr_amount <= 2241: 2 (13.85/1.75)
+|   |   cr_amount > 2241: 1 (2.34)
+|   purpose = A46: 2 (4.03)
+|   purpose = A42: 1 (6.43)
+|   purpose = A40: 2 (8.65/1.17)
+|   purpose = A41: 1 (2.92/1.17)
+|   purpose = A49: 2 (10.99/2.92)
+|   purpose = A44: 2 (0.0)
+|   purpose = A45: 2 (3.45)
+|   purpose = A410: 2 (3.45)
+|   purpose = A48: 2 (0.0)
+
+Number of Leaves  : 	124
+
+Size of the tree : 	185
+
+
+Weight: 1.94
+
+J48 pruned tree
+------------------
+
+housing = A152
+|   checking_duration <= 7
+|   |   cr_amount <= 4020: 1 (51.98/2.64)
+|   |   cr_amount > 4020: 2 (5.31/0.67)
+|   checking_duration > 7
+|   |   purpose = A43
+|   |   |   residence <= 3
+|   |   |   |   cr_history = A34
+|   |   |   |   |   tel = A192: 1 (10.34)
+|   |   |   |   |   tel = A191
+|   |   |   |   |   |   people <= 1
+|   |   |   |   |   |   |   checking = A11: 1 (0.0)
+|   |   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   |   residence <= 1: 1 (2.33)
+|   |   |   |   |   |   |   |   residence > 1: 2 (4.95/0.33)
+|   |   |   |   |   |   |   checking = A14: 1 (6.02)
+|   |   |   |   |   |   |   checking = A13: 1 (0.0)
+|   |   |   |   |   |   people > 1: 2 (2.31/0.33)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   cr_amount <= 5866
+|   |   |   |   |   |   debtor = A101
+|   |   |   |   |   |   |   checking = A11
+|   |   |   |   |   |   |   |   savings = A65: 2 (0.0)
+|   |   |   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   |   |   checking_duration <= 16: 1 (4.61)
+|   |   |   |   |   |   |   |   |   checking_duration > 16: 2 (6.31/0.67)
+|   |   |   |   |   |   |   |   savings = A63: 1 (0.33)
+|   |   |   |   |   |   |   |   savings = A64: 1 (2.33)
+|   |   |   |   |   |   |   |   savings = A62: 2 (5.0)
+|   |   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   |   |   cr_amount <= 1386: 2 (6.25/0.33)
+|   |   |   |   |   |   |   |   |   cr_amount > 1386: 1 (4.97)
+|   |   |   |   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   |   |   |   emp_status = A75: 1 (0.0)
+|   |   |   |   |   |   |   |   |   emp_status = A73: 1 (6.99)
+|   |   |   |   |   |   |   |   |   emp_status = A74: 1 (0.33)
+|   |   |   |   |   |   |   |   |   emp_status = A71: 1 (0.0)
+|   |   |   |   |   |   |   |   |   emp_status = A72: 2 (2.31/0.33)
+|   |   |   |   |   |   |   |   marital_status = A91: 1 (0.33)
+|   |   |   |   |   |   |   |   marital_status = A94: 2 (2.64)
+|   |   |   |   |   |   |   checking = A14
+|   |   |   |   |   |   |   |   checking_duration <= 10: 2 (2.31/0.33)
+|   |   |   |   |   |   |   |   checking_duration > 10: 1 (20.65/1.97)
+|   |   |   |   |   |   |   checking = A13
+|   |   |   |   |   |   |   |   job = A173
+|   |   |   |   |   |   |   |   |   age <= 25: 1 (9.32)
+|   |   |   |   |   |   |   |   |   age > 25: 2 (2.31/0.33)
+|   |   |   |   |   |   |   |   job = A172: 2 (4.28/0.33)
+|   |   |   |   |   |   |   |   job = A174: 1 (0.33)
+|   |   |   |   |   |   |   |   job = A171: 1 (0.0)
+|   |   |   |   |   |   debtor = A103: 1 (5.01)
+|   |   |   |   |   |   debtor = A102: 2 (2.31/0.33)
+|   |   |   |   |   cr_amount > 5866: 2 (9.22/0.33)
+|   |   |   |   cr_history = A33
+|   |   |   |   |   tel = A192: 2 (2.64/0.33)
+|   |   |   |   |   tel = A191: 1 (8.0/0.33)
+|   |   |   |   cr_history = A30: 2 (3.94)
+|   |   |   |   cr_history = A31: 1 (0.0)
+|   |   |   residence > 3: 1 (38.34/3.98)
+|   |   purpose = A46
+|   |   |   install_rate <= 1: 1 (2.33)
+|   |   |   install_rate > 1: 2 (28.95/3.68)
+|   |   purpose = A42
+|   |   |   existing_cr <= 1
+|   |   |   |   savings = A65
+|   |   |   |   |   age <= 27: 2 (4.64/0.33)
+|   |   |   |   |   age > 27: 1 (9.33/0.33)
+|   |   |   |   savings = A61
+|   |   |   |   |   cr_history = A34
+|   |   |   |   |   |   checking_duration <= 22: 1 (3.67)
+|   |   |   |   |   |   checking_duration > 22: 2 (2.97/0.33)
+|   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   people <= 1
+|   |   |   |   |   |   |   checking = A11
+|   |   |   |   |   |   |   |   checking_duration <= 15: 1 (3.31)
+|   |   |   |   |   |   |   |   checking_duration > 15
+|   |   |   |   |   |   |   |   |   install_rate <= 3: 2 (6.97/0.33)
+|   |   |   |   |   |   |   |   |   install_rate > 3: 1 (5.64/1.0)
+|   |   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   |   marital_status = A93: 2 (1.97)
+|   |   |   |   |   |   |   |   marital_status = A92: 2 (7.33)
+|   |   |   |   |   |   |   |   marital_status = A91: 1 (2.31/0.33)
+|   |   |   |   |   |   |   |   marital_status = A94: 1 (1.97)
+|   |   |   |   |   |   |   checking = A14: 2 (3.64/1.67)
+|   |   |   |   |   |   |   checking = A13: 1 (4.0)
+|   |   |   |   |   |   people > 1: 2 (5.61/1.0)
+|   |   |   |   |   cr_history = A33: 2 (4.64)
+|   |   |   |   |   cr_history = A30: 2 (0.0)
+|   |   |   |   |   cr_history = A31: 2 (1.34)
+|   |   |   |   savings = A63: 1 (1.0)
+|   |   |   |   savings = A64: 1 (1.67)
+|   |   |   |   savings = A62: 2 (2.67/0.33)
+|   |   |   existing_cr > 1: 1 (35.55/8.25)
+|   |   purpose = A40
+|   |   |   savings = A65
+|   |   |   |   other_install = A143
+|   |   |   |   |   cr_amount <= 1913: 2 (7.95/1.0)
+|   |   |   |   |   cr_amount > 1913: 1 (8.67)
+|   |   |   |   other_install = A141: 2 (4.28)
+|   |   |   |   other_install = A142: 2 (0.0)
+|   |   |   savings = A61
+|   |   |   |   other_install = A143
+|   |   |   |   |   debtor = A101
+|   |   |   |   |   |   checking = A11
+|   |   |   |   |   |   |   property = A121: 1 (9.28/1.34)
+|   |   |   |   |   |   |   property = A122: 2 (4.95/0.33)
+|   |   |   |   |   |   |   property = A124: 2 (0.0)
+|   |   |   |   |   |   |   property = A123: 2 (8.31/0.33)
+|   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   install_rate <= 2: 1 (6.63)
+|   |   |   |   |   |   |   install_rate > 2: 2 (2.01/0.33)
+|   |   |   |   |   |   checking = A14: 1 (13.99/1.97)
+|   |   |   |   |   |   checking = A13: 1 (2.67)
+|   |   |   |   |   debtor = A103: 1 (1.0)
+|   |   |   |   |   debtor = A102: 2 (3.33/0.33)
+|   |   |   |   other_install = A141
+|   |   |   |   |   foreign = A201: 2 (15.86/0.33)
+|   |   |   |   |   foreign = A202: 1 (2.33)
+|   |   |   |   other_install = A142
+|   |   |   |   |   property = A121: 2 (3.94)
+|   |   |   |   |   property = A122: 2 (0.0)
+|   |   |   |   |   property = A124: 2 (0.0)
+|   |   |   |   |   property = A123: 1 (2.33)
+|   |   |   savings = A63
+|   |   |   |   age <= 29: 2 (3.94)
+|   |   |   |   age > 29: 1 (5.67)
+|   |   |   savings = A64: 1 (4.34)
+|   |   |   savings = A62
+|   |   |   |   checking_duration <= 30: 1 (39.11/1.34)
+|   |   |   |   checking_duration > 30: 2 (3.0)
+|   |   purpose = A41
+|   |   |   residence <= 1: 2 (2.97/1.0)
+|   |   |   residence > 1
+|   |   |   |   age <= 25: 2 (3.33/1.0)
+|   |   |   |   age > 25: 1 (34.99/0.33)
+|   |   purpose = A49
+|   |   |   savings = A65: 1 (14.94/1.97)
+|   |   |   savings = A61
+|   |   |   |   cr_amount <= 6681
+|   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   residence <= 3: 1 (21.58/2.64)
+|   |   |   |   |   |   residence > 3: 2 (3.31/0.67)
+|   |   |   |   |   install_rate > 3
+|   |   |   |   |   |   other_install = A143: 2 (9.56/1.34)
+|   |   |   |   |   |   other_install = A141: 1 (0.33)
+|   |   |   |   |   |   other_install = A142
+|   |   |   |   |   |   |   emp_status = A75: 1 (2.33)
+|   |   |   |   |   |   |   emp_status = A73: 1 (0.0)
+|   |   |   |   |   |   |   emp_status = A74: 1 (2.33)
+|   |   |   |   |   |   |   emp_status = A71: 2 (1.97)
+|   |   |   |   |   |   |   emp_status = A72: 1 (0.0)
+|   |   |   |   cr_amount > 6681: 2 (6.94)
+|   |   |   savings = A63
+|   |   |   |   checking = A11: 1 (0.0)
+|   |   |   |   checking = A12: 1 (2.67)
+|   |   |   |   checking = A14: 2 (2.31/0.33)
+|   |   |   |   checking = A13: 1 (0.0)
+|   |   |   savings = A64
+|   |   |   |   property = A121: 1 (5.33)
+|   |   |   |   property = A122: 2 (2.31/0.33)
+|   |   |   |   property = A124: 1 (0.0)
+|   |   |   |   property = A123: 1 (0.0)
+|   |   |   savings = A62: 1 (7.0)
+|   |   purpose = A44: 1 (6.67/1.0)
+|   |   purpose = A45
+|   |   |   emp_status = A75: 1 (5.0)
+|   |   |   emp_status = A73
+|   |   |   |   cr_amount <= 1512: 2 (3.94)
+|   |   |   |   cr_amount > 1512: 1 (3.67)
+|   |   |   emp_status = A74: 1 (0.67/0.33)
+|   |   |   emp_status = A71: 1 (2.31)
+|   |   |   emp_status = A72: 2 (2.31)
+|   |   purpose = A410
+|   |   |   other_install = A143: 1 (3.0/0.33)
+|   |   |   other_install = A141: 1 (5.33/0.67)
+|   |   |   other_install = A142: 2 (1.97)
+|   |   purpose = A48: 1 (6.0)
+housing = A153
+|   install_rate <= 2
+|   |   age <= 43: 1 (17.64/0.67)
+|   |   age > 43
+|   |   |   debtor = A101
+|   |   |   |   existing_cr <= 1: 2 (10.25/1.67)
+|   |   |   |   existing_cr > 1: 1 (4.0/0.33)
+|   |   |   debtor = A103: 1 (2.33)
+|   |   |   debtor = A102: 2 (0.0)
+|   install_rate > 2
+|   |   existing_cr <= 1
+|   |   |   emp_status = A75
+|   |   |   |   cr_amount <= 3213
+|   |   |   |   |   cr_history = A34: 1 (0.0)
+|   |   |   |   |   cr_history = A32: 1 (10.3)
+|   |   |   |   |   cr_history = A33: 1 (2.31)
+|   |   |   |   |   cr_history = A30: 2 (1.97)
+|   |   |   |   |   cr_history = A31: 2 (0.33)
+|   |   |   |   cr_amount > 3213: 2 (10.25/0.67)
+|   |   |   emp_status = A73: 2 (9.31/2.01)
+|   |   |   emp_status = A74
+|   |   |   |   tel = A192: 1 (2.33)
+|   |   |   |   tel = A191: 2 (4.61)
+|   |   |   emp_status = A71: 1 (9.3/0.33)
+|   |   |   emp_status = A72
+|   |   |   |   other_install = A143: 2 (4.3)
+|   |   |   |   other_install = A141: 1 (2.67)
+|   |   |   |   other_install = A142: 2 (0.0)
+|   |   existing_cr > 1
+|   |   |   checking_duration <= 33
+|   |   |   |   people <= 1
+|   |   |   |   |   savings = A65: 2 (2.31/0.33)
+|   |   |   |   |   savings = A61: 1 (5.01/0.33)
+|   |   |   |   |   savings = A63: 1 (0.0)
+|   |   |   |   |   savings = A64: 1 (0.0)
+|   |   |   |   |   savings = A62: 1 (0.0)
+|   |   |   |   people > 1: 2 (7.95/1.0)
+|   |   |   checking_duration > 33: 2 (23.74)
+housing = A151
+|   checking_duration <= 42
+|   |   savings = A65
+|   |   |   property = A121
+|   |   |   |   install_rate <= 3: 1 (11.63)
+|   |   |   |   install_rate > 3: 2 (2.97/0.67)
+|   |   |   property = A122: 1 (9.0)
+|   |   |   property = A124: 1 (1.0/0.33)
+|   |   |   property = A123: 2 (5.95/1.67)
+|   |   savings = A61
+|   |   |   cr_history = A34
+|   |   |   |   cr_amount <= 2122: 1 (2.67)
+|   |   |   |   cr_amount > 2122: 2 (19.14/2.67)
+|   |   |   cr_history = A32
+|   |   |   |   install_rate <= 1: 1 (9.64/1.67)
+|   |   |   |   install_rate > 1
+|   |   |   |   |   age <= 23: 2 (18.58/1.67)
+|   |   |   |   |   age > 23: 1 (26.54/7.59)
+|   |   |   cr_history = A33: 1 (4.97/0.33)
+|   |   |   cr_history = A30: 2 (3.64)
+|   |   |   cr_history = A31: 1 (3.33/1.0)
+|   |   savings = A63
+|   |   |   install_rate <= 2: 1 (2.34)
+|   |   |   install_rate > 2: 2 (16.72/1.0)
+|   |   savings = A64
+|   |   |   install_rate <= 3: 1 (8.0)
+|   |   |   install_rate > 3: 2 (2.64/0.67)
+|   |   savings = A62
+|   |   |   cr_history = A34: 1 (0.33)
+|   |   |   cr_history = A32
+|   |   |   |   checking = A11: 2 (0.0)
+|   |   |   |   checking = A12: 2 (6.33/0.33)
+|   |   |   |   checking = A14: 1 (2.01)
+|   |   |   |   checking = A13: 2 (0.0)
+|   |   |   cr_history = A33: 1 (4.28)
+|   |   |   cr_history = A30: 1 (0.67/0.33)
+|   |   |   cr_history = A31: 2 (0.33)
+|   checking_duration > 42: 2 (11.91)
+
+Number of Leaves  : 	172
+
+Size of the tree : 	255
+
+
+Weight: 2.47
+
+J48 pruned tree
+------------------
+
+checking_duration <= 15
+|   cr_history = A34
+|   |   age <= 59: 1 (99.8/10.0)
+|   |   age > 59
+|   |   |   cr_amount <= 2124: 1 (3.78)
+|   |   |   cr_amount > 2124: 2 (12.67)
+|   cr_history = A32
+|   |   debtor = A101
+|   |   |   tel = A192
+|   |   |   |   cr_amount <= 2538: 1 (44.05/3.58)
+|   |   |   |   cr_amount > 2538
+|   |   |   |   |   emp_status = A75: 2 (5.92/0.18)
+|   |   |   |   |   emp_status = A73: 2 (1.98/0.54)
+|   |   |   |   |   emp_status = A74: 1 (0.18)
+|   |   |   |   |   emp_status = A71: 1 (3.58/1.25)
+|   |   |   |   |   emp_status = A72: 1 (2.33)
+|   |   |   tel = A191
+|   |   |   |   other_install = A143
+|   |   |   |   |   cr_amount <= 1534
+|   |   |   |   |   |   purpose = A43
+|   |   |   |   |   |   |   emp_status = A75: 1 (4.32/1.07)
+|   |   |   |   |   |   |   emp_status = A73: 1 (9.49/2.14)
+|   |   |   |   |   |   |   emp_status = A74: 2 (2.51/0.18)
+|   |   |   |   |   |   |   emp_status = A71: 1 (0.18)
+|   |   |   |   |   |   |   emp_status = A72: 2 (4.14/0.73)
+|   |   |   |   |   |   purpose = A46: 2 (4.48)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   emp_status = A75: 1 (3.22)
+|   |   |   |   |   |   |   emp_status = A73: 2 (7.37/1.25)
+|   |   |   |   |   |   |   emp_status = A74: 2 (0.0)
+|   |   |   |   |   |   |   emp_status = A71: 2 (0.0)
+|   |   |   |   |   |   |   emp_status = A72: 1 (0.54)
+|   |   |   |   |   |   purpose = A40
+|   |   |   |   |   |   |   cr_amount <= 640: 1 (3.41)
+|   |   |   |   |   |   |   cr_amount > 640
+|   |   |   |   |   |   |   |   residence <= 2: 2 (13.98/0.91)
+|   |   |   |   |   |   |   |   residence > 2
+|   |   |   |   |   |   |   |   |   checking_duration <= 11: 2 (2.14)
+|   |   |   |   |   |   |   |   |   checking_duration > 11: 1 (2.51/0.18)
+|   |   |   |   |   |   purpose = A41: 1 (0.36)
+|   |   |   |   |   |   purpose = A49: 1 (4.66)
+|   |   |   |   |   |   purpose = A44: 2 (3.96/1.63)
+|   |   |   |   |   |   purpose = A45: 1 (2.7/1.07)
+|   |   |   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   |   |   purpose = A48: 2 (1.45/0.18)
+|   |   |   |   |   cr_amount > 1534: 1 (46.38/5.36)
+|   |   |   |   other_install = A141
+|   |   |   |   |   job = A173: 1 (3.07/0.18)
+|   |   |   |   |   job = A172
+|   |   |   |   |   |   checking_duration <= 13: 2 (17.14)
+|   |   |   |   |   |   checking_duration > 13: 1 (2.53)
+|   |   |   |   |   job = A174: 2 (0.0)
+|   |   |   |   |   job = A171: 2 (0.0)
+|   |   |   |   other_install = A142: 2 (3.22)
+|   |   debtor = A103: 1 (8.83/1.07)
+|   |   debtor = A102: 1 (8.95/1.07)
+|   cr_history = A33
+|   |   age <= 46: 1 (7.94)
+|   |   age > 46: 2 (14.99/0.18)
+|   cr_history = A30
+|   |   existing_cr <= 1: 1 (2.71)
+|   |   existing_cr > 1: 2 (7.36/1.26)
+|   cr_history = A31
+|   |   checking = A11: 2 (3.96/0.18)
+|   |   checking = A12: 2 (10.22/1.26)
+|   |   checking = A14: 1 (3.97)
+|   |   checking = A13: 1 (2.33/1.07)
+checking_duration > 15
+|   savings = A65
+|   |   marital_status = A93
+|   |   |   checking = A11: 2 (7.71/1.99)
+|   |   |   checking = A12
+|   |   |   |   cr_amount <= 12204: 1 (15.29)
+|   |   |   |   cr_amount > 12204: 2 (2.15)
+|   |   |   checking = A14: 1 (24.64/3.21)
+|   |   |   checking = A13: 2 (1.79/0.73)
+|   |   marital_status = A92
+|   |   |   job = A173
+|   |   |   |   cr_history = A34: 1 (2.15)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   age <= 26: 1 (7.55/0.18)
+|   |   |   |   |   age > 26: 2 (7.16/1.45)
+|   |   |   |   cr_history = A33: 1 (4.3)
+|   |   |   |   cr_history = A30: 2 (1.07)
+|   |   |   |   cr_history = A31: 1 (0.0)
+|   |   |   job = A172: 1 (1.63)
+|   |   |   job = A174: 2 (2.32/0.18)
+|   |   |   job = A171: 1 (1.26)
+|   |   marital_status = A91
+|   |   |   checking_duration <= 36: 1 (3.59)
+|   |   |   checking_duration > 36: 2 (12.85/0.18)
+|   |   marital_status = A94: 1 (9.15/1.26)
+|   savings = A61
+|   |   job = A173
+|   |   |   residence <= 1
+|   |   |   |   cr_history = A34: 1 (6.11/1.07)
+|   |   |   |   cr_history = A32: 1 (18.12/2.88)
+|   |   |   |   cr_history = A33: 2 (4.47)
+|   |   |   |   cr_history = A30: 1 (4.67/1.07)
+|   |   |   |   cr_history = A31: 1 (1.45/0.18)
+|   |   |   residence > 1
+|   |   |   |   install_rate <= 1
+|   |   |   |   |   property = A121: 2 (3.22)
+|   |   |   |   |   property = A122: 1 (5.03/0.18)
+|   |   |   |   |   property = A124: 1 (1.45)
+|   |   |   |   |   property = A123: 1 (5.22/0.18)
+|   |   |   |   install_rate > 1
+|   |   |   |   |   other_install = A143
+|   |   |   |   |   |   checking = A11: 2 (47.76/11.12)
+|   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   |   checking_duration <= 26: 1 (2.53)
+|   |   |   |   |   |   |   |   checking_duration > 26: 2 (6.81/0.54)
+|   |   |   |   |   |   |   marital_status = A92: 1 (3.6/0.54)
+|   |   |   |   |   |   |   marital_status = A91: 2 (2.51)
+|   |   |   |   |   |   |   marital_status = A94: 2 (0.18)
+|   |   |   |   |   |   checking = A14
+|   |   |   |   |   |   |   age <= 23: 2 (4.64/0.36)
+|   |   |   |   |   |   |   age > 23: 1 (21.4/1.07)
+|   |   |   |   |   |   checking = A13: 1 (8.44/1.07)
+|   |   |   |   |   other_install = A141: 2 (22.15/3.25)
+|   |   |   |   |   other_install = A142
+|   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   property = A121: 2 (3.22)
+|   |   |   |   |   |   |   property = A122: 2 (0.18)
+|   |   |   |   |   |   |   property = A124: 2 (1.07)
+|   |   |   |   |   |   |   property = A123: 1 (3.41)
+|   |   |   |   |   |   existing_cr > 1: 2 (15.36/0.18)
+|   |   job = A172
+|   |   |   cr_amount <= 6229
+|   |   |   |   age <= 47: 2 (56.49/2.54)
+|   |   |   |   age > 47
+|   |   |   |   |   checking = A11: 2 (3.78/1.25)
+|   |   |   |   |   checking = A12: 1 (2.33)
+|   |   |   |   |   checking = A14: 1 (0.0)
+|   |   |   |   |   checking = A13: 1 (0.0)
+|   |   |   cr_amount > 6229: 1 (4.15/0.18)
+|   |   job = A174
+|   |   |   residence <= 1: 1 (6.29)
+|   |   |   residence > 1
+|   |   |   |   cr_history = A34
+|   |   |   |   |   emp_status = A75: 1 (7.37)
+|   |   |   |   |   emp_status = A73: 2 (3.58/0.18)
+|   |   |   |   |   emp_status = A74: 1 (2.33)
+|   |   |   |   |   emp_status = A71: 1 (1.99/0.36)
+|   |   |   |   |   emp_status = A72: 1 (0.18)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   housing = A152: 1 (9.17/2.32)
+|   |   |   |   |   |   housing = A153
+|   |   |   |   |   |   |   cr_amount <= 7166: 1 (4.86)
+|   |   |   |   |   |   |   cr_amount > 7166: 2 (3.58)
+|   |   |   |   |   |   housing = A151: 2 (17.33/1.45)
+|   |   |   |   |   existing_cr > 1: 2 (16.96)
+|   |   |   |   cr_history = A33: 2 (5.91/0.18)
+|   |   |   |   cr_history = A30: 2 (5.37)
+|   |   |   |   cr_history = A31: 1 (4.48/1.07)
+|   |   job = A171
+|   |   |   cr_amount <= 2930: 2 (6.99/0.36)
+|   |   |   cr_amount > 2930: 1 (2.14)
+|   savings = A63
+|   |   cr_amount <= 2384: 1 (7.37)
+|   |   cr_amount > 2384
+|   |   |   residence <= 1: 1 (3.41)
+|   |   |   residence > 1
+|   |   |   |   job = A173
+|   |   |   |   |   install_rate <= 3: 2 (37.08/0.91)
+|   |   |   |   |   install_rate > 3: 1 (5.91/1.07)
+|   |   |   |   job = A172: 2 (2.14)
+|   |   |   |   job = A174: 1 (1.45)
+|   |   |   |   job = A171: 1 (0.18)
+|   savings = A64: 1 (18.0/1.25)
+|   savings = A62
+|   |   tel = A192
+|   |   |   age <= 40: 1 (17.16/0.36)
+|   |   |   age > 40: 2 (3.07/0.36)
+|   |   tel = A191
+|   |   |   existing_cr <= 1
+|   |   |   |   debtor = A101: 1 (15.09/3.25)
+|   |   |   |   debtor = A103: 2 (1.26)
+|   |   |   |   debtor = A102: 2 (2.53)
+|   |   |   existing_cr > 1: 2 (33.22/2.17)
+
+Number of Leaves  : 	124
+
+Size of the tree : 	183
+
+
+Weight: 2.33
+
+J48 pruned tree
+------------------
+
+foreign = A201
+|   debtor = A101
+|   |   emp_status = A75
+|   |   |   marital_status = A93
+|   |   |   |   purpose = A43
+|   |   |   |   |   cr_history = A34: 1 (8.31)
+|   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   cr_amount <= 802: 2 (7.9/0.69)
+|   |   |   |   |   |   |   cr_amount > 802: 1 (13.51)
+|   |   |   |   |   |   existing_cr > 1: 2 (14.1/0.2)
+|   |   |   |   |   cr_history = A33: 1 (0.79)
+|   |   |   |   |   cr_history = A30: 1 (0.0)
+|   |   |   |   |   cr_history = A31: 1 (0.79)
+|   |   |   |   purpose = A46
+|   |   |   |   |   age <= 43: 2 (7.3/0.1)
+|   |   |   |   |   age > 43: 1 (5.02/0.1)
+|   |   |   |   purpose = A42
+|   |   |   |   |   checking = A11: 2 (16.16/0.1)
+|   |   |   |   |   checking = A12: 1 (2.46)
+|   |   |   |   |   checking = A14: 1 (13.21)
+|   |   |   |   |   checking = A13: 2 (0.0)
+|   |   |   |   purpose = A40: 2 (39.41/6.25)
+|   |   |   |   purpose = A41: 1 (17.23/2.17)
+|   |   |   |   purpose = A49
+|   |   |   |   |   residence <= 3: 1 (7.92)
+|   |   |   |   |   residence > 3: 2 (2.86/0.89)
+|   |   |   |   purpose = A44: 2 (0.0)
+|   |   |   |   purpose = A45: 1 (2.07/0.59)
+|   |   |   |   purpose = A410: 1 (1.77/0.59)
+|   |   |   |   purpose = A48: 1 (1.02)
+|   |   |   marital_status = A92
+|   |   |   |   cr_history = A34
+|   |   |   |   |   age <= 35: 2 (13.44/0.79)
+|   |   |   |   |   age > 35: 1 (5.03/0.69)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   install_rate <= 2
+|   |   |   |   |   |   cr_amount <= 2782: 2 (2.29/0.1)
+|   |   |   |   |   |   cr_amount > 2782: 1 (3.1)
+|   |   |   |   |   install_rate > 2: 1 (14.11/0.2)
+|   |   |   |   cr_history = A33: 1 (0.1)
+|   |   |   |   cr_history = A30: 2 (1.18)
+|   |   |   |   cr_history = A31: 2 (2.51)
+|   |   |   marital_status = A91: 1 (4.38/2.07)
+|   |   |   marital_status = A94: 1 (16.1)
+|   |   emp_status = A73
+|   |   |   purpose = A43
+|   |   |   |   other_install = A143
+|   |   |   |   |   checking = A11
+|   |   |   |   |   |   install_rate <= 3: 1 (4.47/0.99)
+|   |   |   |   |   |   install_rate > 3: 2 (11.65/1.27)
+|   |   |   |   |   checking = A12
+|   |   |   |   |   |   install_rate <= 1: 1 (2.08)
+|   |   |   |   |   |   install_rate > 1: 2 (24.27/3.46)
+|   |   |   |   |   checking = A14: 1 (11.51/0.59)
+|   |   |   |   |   checking = A13
+|   |   |   |   |   |   age <= 25: 1 (3.26)
+|   |   |   |   |   |   age > 25: 2 (21.08/2.99)
+|   |   |   |   other_install = A141: 2 (3.94/1.49)
+|   |   |   |   other_install = A142: 1 (8.15)
+|   |   |   purpose = A46
+|   |   |   |   savings = A65: 1 (5.51)
+|   |   |   |   savings = A61: 2 (4.62/1.97)
+|   |   |   |   savings = A63: 1 (0.0)
+|   |   |   |   savings = A64: 1 (0.0)
+|   |   |   |   savings = A62: 2 (5.95/1.18)
+|   |   |   purpose = A42
+|   |   |   |   age <= 23: 2 (18.2/0.4)
+|   |   |   |   age > 23
+|   |   |   |   |   job = A173: 1 (28.07/2.17)
+|   |   |   |   |   job = A172
+|   |   |   |   |   |   marital_status = A93: 2 (14.36/0.79)
+|   |   |   |   |   |   marital_status = A92: 2 (0.79/0.2)
+|   |   |   |   |   |   marital_status = A91: 1 (7.05)
+|   |   |   |   |   |   marital_status = A94: 2 (0.0)
+|   |   |   |   |   job = A174: 2 (12.16)
+|   |   |   |   |   job = A171: 1 (0.0)
+|   |   |   purpose = A40
+|   |   |   |   people <= 1
+|   |   |   |   |   cr_history = A34: 1 (4.53/1.76)
+|   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   savings = A65: 2 (10.5/0.89)
+|   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   residence <= 3: 2 (4.62/1.48)
+|   |   |   |   |   |   |   residence > 3: 1 (2.67/0.1)
+|   |   |   |   |   |   savings = A63: 2 (0.59)
+|   |   |   |   |   |   savings = A64: 1 (1.02)
+|   |   |   |   |   |   savings = A62: 1 (0.79/0.1)
+|   |   |   |   |   cr_history = A33: 1 (3.14)
+|   |   |   |   |   cr_history = A30: 2 (1.28)
+|   |   |   |   |   cr_history = A31: 2 (0.1)
+|   |   |   |   people > 1: 1 (6.49/0.79)
+|   |   |   purpose = A41
+|   |   |   |   age <= 26: 2 (4.81/1.86)
+|   |   |   |   age > 26: 1 (16.82)
+|   |   |   purpose = A49
+|   |   |   |   housing = A152
+|   |   |   |   |   age <= 27: 1 (4.88/0.2)
+|   |   |   |   |   age > 27
+|   |   |   |   |   |   checking = A11: 2 (0.0)
+|   |   |   |   |   |   checking = A12: 1 (6.3/2.35)
+|   |   |   |   |   |   checking = A14: 2 (28.36/2.4)
+|   |   |   |   |   |   checking = A13: 1 (0.1)
+|   |   |   |   housing = A153: 1 (1.28)
+|   |   |   |   housing = A151: 2 (2.46/0.1)
+|   |   |   purpose = A44: 2 (3.58/1.12)
+|   |   |   purpose = A45
+|   |   |   |   checking_duration <= 13: 2 (6.03)
+|   |   |   |   checking_duration > 13: 1 (2.5/0.59)
+|   |   |   purpose = A410: 1 (7.13)
+|   |   |   purpose = A48: 1 (1.39)
+|   |   emp_status = A74
+|   |   |   existing_cr <= 2: 1 (98.89/22.6)
+|   |   |   existing_cr > 2: 2 (7.61/0.89)
+|   |   emp_status = A71
+|   |   |   age <= 53
+|   |   |   |   residence <= 2: 2 (42.62/1.78)
+|   |   |   |   residence > 2
+|   |   |   |   |   cr_amount <= 1223: 2 (8.13)
+|   |   |   |   |   cr_amount > 1223: 1 (6.66/1.28)
+|   |   |   age > 53: 1 (8.85/1.18)
+|   |   emp_status = A72
+|   |   |   savings = A65
+|   |   |   |   checking_duration <= 33: 1 (18.61/1.17)
+|   |   |   |   checking_duration > 33: 2 (6.72/0.69)
+|   |   |   savings = A61
+|   |   |   |   cr_amount <= 409: 1 (8.31)
+|   |   |   |   cr_amount > 409
+|   |   |   |   |   other_install = A143
+|   |   |   |   |   |   job = A173
+|   |   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   |   people <= 1: 2 (39.82/9.19)
+|   |   |   |   |   |   |   |   people > 1: 1 (2.2)
+|   |   |   |   |   |   |   existing_cr > 1: 1 (6.11/1.96)
+|   |   |   |   |   |   job = A172: 2 (38.73/2.21)
+|   |   |   |   |   |   job = A174
+|   |   |   |   |   |   |   marital_status = A93: 2 (7.71)
+|   |   |   |   |   |   |   marital_status = A92: 1 (4.17)
+|   |   |   |   |   |   |   marital_status = A91: 1 (0.1)
+|   |   |   |   |   |   |   marital_status = A94: 2 (1.28/0.1)
+|   |   |   |   |   |   job = A171: 2 (6.13)
+|   |   |   |   |   other_install = A141
+|   |   |   |   |   |   tel = A192: 2 (2.4/0.1)
+|   |   |   |   |   |   tel = A191: 1 (2.96/0.1)
+|   |   |   |   |   other_install = A142
+|   |   |   |   |   |   cr_amount <= 1424: 2 (2.35)
+|   |   |   |   |   |   cr_amount > 1424: 1 (2.89)
+|   |   |   savings = A63
+|   |   |   |   residence <= 3: 1 (2.3/0.59)
+|   |   |   |   residence > 3: 2 (10.12)
+|   |   |   savings = A64: 1 (2.27/0.59)
+|   |   |   savings = A62
+|   |   |   |   existing_cr <= 1
+|   |   |   |   |   job = A173: 1 (7.76/1.02)
+|   |   |   |   |   job = A172: 2 (3.38)
+|   |   |   |   |   job = A174: 2 (1.02)
+|   |   |   |   |   job = A171: 1 (0.0)
+|   |   |   |   existing_cr > 1: 2 (4.56)
+|   debtor = A103
+|   |   checking_duration <= 42
+|   |   |   savings = A65
+|   |   |   |   property = A121: 1 (2.18)
+|   |   |   |   property = A122: 2 (6.03)
+|   |   |   |   property = A124: 2 (0.0)
+|   |   |   |   property = A123: 2 (0.0)
+|   |   |   savings = A61: 1 (30.35/2.55)
+|   |   |   savings = A63: 1 (0.0)
+|   |   |   savings = A64: 1 (0.0)
+|   |   |   savings = A62: 1 (0.1)
+|   |   checking_duration > 42: 2 (7.31)
+|   debtor = A102
+|   |   housing = A152
+|   |   |   residence <= 1: 2 (7.81/0.1)
+|   |   |   residence > 1
+|   |   |   |   checking = A11: 1 (6.04/1.82)
+|   |   |   |   checking = A12: 2 (3.38)
+|   |   |   |   checking = A14: 1 (3.06)
+|   |   |   |   checking = A13: 2 (0.59)
+|   |   housing = A153: 1 (3.15/0.69)
+|   |   housing = A151: 2 (17.96/1.12)
+foreign = A202: 1 (24.84/3.04)
+
+Number of Leaves  : 	125
+
+Size of the tree : 	182
+
+
+Weight: 2.18
+
+J48 pruned tree
+------------------
+
+cr_amount <= 601
+|   people <= 1: 1 (31.27/0.98)
+|   people > 1: 2 (3.43/0.54)
+cr_amount > 601
+|   checking = A11
+|   |   emp_status = A75
+|   |   |   marital_status = A93
+|   |   |   |   people <= 1
+|   |   |   |   |   age <= 61: 2 (37.2/2.24)
+|   |   |   |   |   age > 61: 1 (4.81/0.77)
+|   |   |   |   people > 1
+|   |   |   |   |   install_rate <= 1: 2 (2.94/0.06)
+|   |   |   |   |   install_rate > 1: 1 (9.91/0.71)
+|   |   |   marital_status = A92
+|   |   |   |   other_install = A143: 1 (7.87/0.06)
+|   |   |   |   other_install = A141: 2 (0.82)
+|   |   |   |   other_install = A142: 2 (3.41)
+|   |   |   marital_status = A91: 2 (2.94/0.06)
+|   |   |   marital_status = A94: 1 (6.8)
+|   |   emp_status = A73
+|   |   |   property = A121
+|   |   |   |   marital_status = A93: 1 (8.6/0.49)
+|   |   |   |   marital_status = A92: 2 (14.36)
+|   |   |   |   marital_status = A91
+|   |   |   |   |   tel = A192: 2 (3.35)
+|   |   |   |   |   tel = A191: 1 (4.54)
+|   |   |   |   marital_status = A94: 1 (6.49/0.71)
+|   |   |   property = A122
+|   |   |   |   housing = A152: 1 (16.08/1.31)
+|   |   |   |   housing = A153: 1 (0.0)
+|   |   |   |   housing = A151: 2 (4.04/0.44)
+|   |   |   property = A124: 2 (5.95/0.57)
+|   |   |   property = A123: 2 (26.13/4.35)
+|   |   emp_status = A74
+|   |   |   people <= 1: 2 (73.17/6.6)
+|   |   |   people > 1: 1 (9.95/1.85)
+|   |   emp_status = A71
+|   |   |   tel = A192: 1 (5.28/0.49)
+|   |   |   tel = A191
+|   |   |   |   cr_amount <= 2415: 2 (15.2)
+|   |   |   |   cr_amount > 2415: 1 (2.2/0.66)
+|   |   emp_status = A72
+|   |   |   savings = A65: 1 (8.98)
+|   |   |   savings = A61
+|   |   |   |   age <= 22: 1 (14.69/0.39)
+|   |   |   |   age > 22
+|   |   |   |   |   checking_duration <= 40: 2 (22.46/4.55)
+|   |   |   |   |   checking_duration > 40: 1 (3.86/0.44)
+|   |   |   savings = A63: 2 (3.35)
+|   |   |   savings = A64: 1 (0.39)
+|   |   |   savings = A62: 2 (0.57)
+|   checking = A12
+|   |   job = A173
+|   |   |   purpose = A43
+|   |   |   |   savings = A65
+|   |   |   |   |   checking_duration <= 13: 2 (3.35)
+|   |   |   |   |   checking_duration > 13: 1 (5.1)
+|   |   |   |   savings = A61: 2 (24.84/3.91)
+|   |   |   |   savings = A63: 1 (1.06)
+|   |   |   |   savings = A64: 2 (0.57)
+|   |   |   |   savings = A62: 2 (10.71/0.65)
+|   |   |   purpose = A46
+|   |   |   |   install_rate <= 3: 1 (2.08/0.06)
+|   |   |   |   install_rate > 3: 2 (4.56/0.66)
+|   |   |   purpose = A42
+|   |   |   |   marital_status = A93
+|   |   |   |   |   checking_duration <= 27: 1 (2.52)
+|   |   |   |   |   checking_duration > 27: 2 (2.94/0.06)
+|   |   |   |   marital_status = A92: 2 (18.8/0.94)
+|   |   |   |   marital_status = A91: 2 (5.8)
+|   |   |   |   marital_status = A94: 1 (2.89)
+|   |   |   purpose = A40
+|   |   |   |   install_rate <= 3
+|   |   |   |   |   other_install = A143: 2 (21.34/2.19)
+|   |   |   |   |   other_install = A141: 1 (2.77/0.49)
+|   |   |   |   |   other_install = A142: 2 (0.0)
+|   |   |   |   install_rate > 3
+|   |   |   |   |   other_install = A143: 1 (14.86/0.82)
+|   |   |   |   |   other_install = A141: 2 (3.09)
+|   |   |   |   |   other_install = A142: 1 (0.0)
+|   |   |   purpose = A41: 1 (10.8/2.28)
+|   |   |   purpose = A49
+|   |   |   |   savings = A65: 1 (1.15)
+|   |   |   |   savings = A61: 2 (7.52/1.97)
+|   |   |   |   savings = A63: 1 (0.44)
+|   |   |   |   savings = A64: 1 (0.39)
+|   |   |   |   savings = A62: 1 (4.79)
+|   |   |   purpose = A44: 1 (0.39)
+|   |   |   purpose = A45: 2 (6.35/0.11)
+|   |   |   purpose = A410: 1 (3.97)
+|   |   |   purpose = A48: 1 (0.57)
+|   |   job = A172
+|   |   |   checking_duration <= 11: 1 (19.21/0.66)
+|   |   |   checking_duration > 11
+|   |   |   |   debtor = A101
+|   |   |   |   |   savings = A65: 1 (1.26)
+|   |   |   |   |   savings = A61
+|   |   |   |   |   |   age <= 37: 2 (19.93/1.16)
+|   |   |   |   |   |   age > 37: 1 (3.55/0.33)
+|   |   |   |   |   savings = A63: 2 (3.68)
+|   |   |   |   |   savings = A64: 1 (0.71)
+|   |   |   |   |   savings = A62: 2 (10.58/0.82)
+|   |   |   |   debtor = A103: 1 (2.26)
+|   |   |   |   debtor = A102: 2 (0.0)
+|   |   job = A174
+|   |   |   housing = A152: 2 (37.42/4.56)
+|   |   |   housing = A153
+|   |   |   |   marital_status = A93: 1 (2.56/0.38)
+|   |   |   |   marital_status = A92: 2 (7.72)
+|   |   |   |   marital_status = A91: 2 (0.0)
+|   |   |   |   marital_status = A94: 2 (0.0)
+|   |   |   housing = A151
+|   |   |   |   cr_amount <= 6999: 1 (4.9)
+|   |   |   |   cr_amount > 6999: 2 (2.27/0.39)
+|   |   job = A171: 1 (9.44/0.62)
+|   checking = A14
+|   |   purpose = A43
+|   |   |   property = A121: 1 (15.01)
+|   |   |   property = A122
+|   |   |   |   people <= 1: 1 (2.55)
+|   |   |   |   people > 1: 2 (3.47/0.11)
+|   |   |   property = A124: 1 (2.63)
+|   |   |   property = A123
+|   |   |   |   existing_cr <= 1
+|   |   |   |   |   checking_duration <= 10: 2 (2.94/0.06)
+|   |   |   |   |   checking_duration > 10: 1 (7.84)
+|   |   |   |   existing_cr > 1: 2 (16.92/3.41)
+|   |   purpose = A46
+|   |   |   age <= 30: 2 (2.28)
+|   |   |   age > 30: 1 (24.94/0.98)
+|   |   purpose = A42
+|   |   |   checking_duration <= 30
+|   |   |   |   checking_duration <= 11: 2 (13.79/3.22)
+|   |   |   |   checking_duration > 11: 1 (25.26/3.54)
+|   |   |   checking_duration > 30: 2 (10.73/0.62)
+|   |   purpose = A40
+|   |   |   age <= 47
+|   |   |   |   other_install = A143
+|   |   |   |   |   residence <= 3: 1 (8.65/0.65)
+|   |   |   |   |   residence > 3
+|   |   |   |   |   |   job = A173: 1 (2.68)
+|   |   |   |   |   |   job = A172: 2 (7.44/0.22)
+|   |   |   |   |   |   job = A174: 2 (4.93/1.58)
+|   |   |   |   |   |   job = A171: 2 (0.0)
+|   |   |   |   other_install = A141: 2 (12.78/0.44)
+|   |   |   |   other_install = A142: 2 (3.27/0.39)
+|   |   |   age > 47
+|   |   |   |   age <= 66: 1 (22.59)
+|   |   |   |   age > 66: 2 (3.35)
+|   |   purpose = A41: 1 (19.77/0.65)
+|   |   purpose = A49
+|   |   |   emp_status = A75: 1 (2.38)
+|   |   |   emp_status = A73
+|   |   |   |   cr_history = A34: 1 (5.8)
+|   |   |   |   cr_history = A32: 2 (7.77/0.54)
+|   |   |   |   cr_history = A33
+|   |   |   |   |   marital_status = A93: 1 (7.41)
+|   |   |   |   |   marital_status = A92: 1 (0.06)
+|   |   |   |   |   marital_status = A91: 1 (0.0)
+|   |   |   |   |   marital_status = A94: 2 (3.35)
+|   |   |   |   cr_history = A30: 2 (3.87)
+|   |   |   |   cr_history = A31: 1 (0.39)
+|   |   |   emp_status = A74: 1 (3.09)
+|   |   |   emp_status = A71: 2 (3.68)
+|   |   |   emp_status = A72: 2 (9.46)
+|   |   purpose = A44: 1 (6.15)
+|   |   purpose = A45: 2 (4.21/0.99)
+|   |   purpose = A410: 1 (0.39)
+|   |   purpose = A48: 1 (5.53)
+|   checking = A13
+|   |   people <= 1
+|   |   |   checking_duration <= 22
+|   |   |   |   purpose = A43: 2 (13.04/2.32)
+|   |   |   |   purpose = A46: 2 (4.33/0.98)
+|   |   |   |   purpose = A42: 1 (2.48)
+|   |   |   |   purpose = A40
+|   |   |   |   |   existing_cr <= 2: 1 (6.92)
+|   |   |   |   |   existing_cr > 2: 2 (3.41/0.06)
+|   |   |   |   purpose = A41: 1 (0.39)
+|   |   |   |   purpose = A49: 2 (3.41/0.06)
+|   |   |   |   purpose = A44: 1 (0.49)
+|   |   |   |   purpose = A45: 2 (0.0)
+|   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   checking_duration > 22
+|   |   |   |   checking_duration <= 27: 1 (23.99)
+|   |   |   |   checking_duration > 27
+|   |   |   |   |   cr_amount <= 4308: 2 (4.69/1.01)
+|   |   |   |   |   cr_amount > 4308: 1 (2.08)
+|   |   people > 1: 2 (7.22/0.79)
+
+Number of Leaves  : 	132
+
+Size of the tree : 	191
+
+
+Weight: 2.53
+
+J48 pruned tree
+------------------
+
+install_rate <= 2
+|   residence <= 1
+|   |   housing = A152
+|   |   |   cr_history = A34: 1 (5.6)
+|   |   |   cr_history = A32
+|   |   |   |   existing_cr <= 1
+|   |   |   |   |   emp_status = A75: 1 (3.58)
+|   |   |   |   |   emp_status = A73
+|   |   |   |   |   |   property = A121: 2 (2.36/0.37)
+|   |   |   |   |   |   property = A122: 1 (0.35)
+|   |   |   |   |   |   property = A124: 1 (0.0)
+|   |   |   |   |   |   property = A123: 1 (3.01)
+|   |   |   |   |   emp_status = A74: 2 (3.45/0.73)
+|   |   |   |   |   emp_status = A71: 2 (3.95)
+|   |   |   |   |   emp_status = A72: 1 (7.46/0.79)
+|   |   |   |   existing_cr > 1: 2 (3.37)
+|   |   |   cr_history = A33: 2 (5.54/0.58)
+|   |   |   cr_history = A30: 1 (5.43)
+|   |   |   cr_history = A31: 2 (4.95/0.21)
+|   |   housing = A153: 1 (0.4)
+|   |   housing = A151: 2 (5.67)
+|   residence > 1
+|   |   job = A173
+|   |   |   debtor = A101
+|   |   |   |   people <= 1
+|   |   |   |   |   cr_history = A34
+|   |   |   |   |   |   purpose = A43: 1 (5.09)
+|   |   |   |   |   |   purpose = A46: 1 (2.05)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   checking_duration <= 24: 1 (5.7)
+|   |   |   |   |   |   |   checking_duration > 24: 2 (5.59)
+|   |   |   |   |   |   purpose = A40: 2 (3.59/0.3)
+|   |   |   |   |   |   purpose = A41: 1 (5.96)
+|   |   |   |   |   |   purpose = A49: 1 (2.85)
+|   |   |   |   |   |   purpose = A44: 1 (0.0)
+|   |   |   |   |   |   purpose = A45: 1 (0.0)
+|   |   |   |   |   |   purpose = A410: 1 (0.0)
+|   |   |   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   marital_status = A93: 1 (23.85/0.79)
+|   |   |   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   |   |   checking_duration <= 12
+|   |   |   |   |   |   |   |   |   purpose = A43: 1 (0.21)
+|   |   |   |   |   |   |   |   |   purpose = A46: 1 (1.84)
+|   |   |   |   |   |   |   |   |   purpose = A42: 2 (4.41/0.37)
+|   |   |   |   |   |   |   |   |   purpose = A40: 2 (2.42/0.21)
+|   |   |   |   |   |   |   |   |   purpose = A41: 1 (0.38)
+|   |   |   |   |   |   |   |   |   purpose = A49: 2 (0.0)
+|   |   |   |   |   |   |   |   |   purpose = A44: 1 (0.26)
+|   |   |   |   |   |   |   |   |   purpose = A45: 2 (0.0)
+|   |   |   |   |   |   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   |   |   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   |   |   |   |   |   checking_duration > 12: 1 (18.96/1.23)
+|   |   |   |   |   |   |   marital_status = A91
+|   |   |   |   |   |   |   |   residence <= 3: 2 (2.75/0.03)
+|   |   |   |   |   |   |   |   residence > 3: 1 (3.45)
+|   |   |   |   |   |   |   marital_status = A94
+|   |   |   |   |   |   |   |   age <= 20: 2 (2.14)
+|   |   |   |   |   |   |   |   age > 20: 1 (6.66/0.31)
+|   |   |   |   |   |   existing_cr > 1
+|   |   |   |   |   |   |   residence <= 3: 1 (3.67)
+|   |   |   |   |   |   |   residence > 3: 2 (4.16)
+|   |   |   |   |   cr_history = A33: 1 (26.84/0.18)
+|   |   |   |   |   cr_history = A30
+|   |   |   |   |   |   age <= 42: 1 (7.67/0.78)
+|   |   |   |   |   |   age > 42: 2 (3.31)
+|   |   |   |   |   cr_history = A31
+|   |   |   |   |   |   checking = A11: 1 (2.61)
+|   |   |   |   |   |   checking = A12: 2 (3.16)
+|   |   |   |   |   |   checking = A14: 2 (0.0)
+|   |   |   |   |   |   checking = A13: 2 (0.0)
+|   |   |   |   people > 1
+|   |   |   |   |   property = A121: 1 (2.18)
+|   |   |   |   |   property = A122: 2 (6.74/0.06)
+|   |   |   |   |   property = A124: 1 (2.39/0.37)
+|   |   |   |   |   property = A123: 2 (2.94/0.85)
+|   |   |   debtor = A103
+|   |   |   |   cr_history = A34: 2 (3.12)
+|   |   |   |   cr_history = A32: 1 (3.71)
+|   |   |   |   cr_history = A33: 1 (0.0)
+|   |   |   |   cr_history = A30: 1 (2.14)
+|   |   |   |   cr_history = A31: 1 (2.79/0.18)
+|   |   |   debtor = A102: 2 (5.09/0.65)
+|   |   job = A172
+|   |   |   checking_duration <= 22: 1 (62.27/6.46)
+|   |   |   checking_duration > 22
+|   |   |   |   residence <= 3: 1 (4.11)
+|   |   |   |   residence > 3: 2 (8.46/0.91)
+|   |   job = A174
+|   |   |   savings = A65: 1 (8.99)
+|   |   |   savings = A61
+|   |   |   |   other_install = A143
+|   |   |   |   |   marital_status = A93: 1 (14.14/0.35)
+|   |   |   |   |   marital_status = A92: 2 (2.76/0.21)
+|   |   |   |   |   marital_status = A91: 2 (3.58/0.21)
+|   |   |   |   |   marital_status = A94: 2 (0.62/0.26)
+|   |   |   |   other_install = A141: 2 (9.03/0.92)
+|   |   |   |   other_install = A142: 2 (3.13)
+|   |   |   savings = A63: 1 (2.61)
+|   |   |   savings = A64: 2 (1.81)
+|   |   |   savings = A62: 2 (0.59/0.03)
+|   |   job = A171
+|   |   |   property = A121: 1 (2.36)
+|   |   |   property = A122: 2 (4.38/0.53)
+|   |   |   property = A124: 2 (3.89/0.4)
+|   |   |   property = A123: 1 (0.31)
+install_rate > 2
+|   checking_duration <= 39
+|   |   age <= 22
+|   |   |   cr_history = A34: 1 (5.43)
+|   |   |   cr_history = A32
+|   |   |   |   purpose = A43: 2 (13.51/0.76)
+|   |   |   |   purpose = A46: 2 (0.0)
+|   |   |   |   purpose = A42: 1 (3.57)
+|   |   |   |   purpose = A40: 2 (3.13/0.66)
+|   |   |   |   purpose = A41: 2 (0.0)
+|   |   |   |   purpose = A49: 1 (0.35)
+|   |   |   |   purpose = A44: 2 (0.35)
+|   |   |   |   purpose = A45: 1 (0.64)
+|   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   purpose = A48: 2 (1.84)
+|   |   |   cr_history = A33: 2 (19.79/0.26)
+|   |   |   cr_history = A30: 2 (0.0)
+|   |   |   cr_history = A31: 1 (0.53)
+|   |   age > 22
+|   |   |   housing = A152
+|   |   |   |   foreign = A201
+|   |   |   |   |   age <= 47
+|   |   |   |   |   |   purpose = A43
+|   |   |   |   |   |   |   people <= 1
+|   |   |   |   |   |   |   |   savings = A65: 1 (11.5)
+|   |   |   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   |   |   tel = A192
+|   |   |   |   |   |   |   |   |   |   emp_status = A75: 1 (0.78)
+|   |   |   |   |   |   |   |   |   |   emp_status = A73: 2 (5.24/0.03)
+|   |   |   |   |   |   |   |   |   |   emp_status = A74: 1 (0.78)
+|   |   |   |   |   |   |   |   |   |   emp_status = A71: 1 (0.0)
+|   |   |   |   |   |   |   |   |   |   emp_status = A72: 1 (5.97/0.53)
+|   |   |   |   |   |   |   |   |   tel = A191: 1 (46.48/4.59)
+|   |   |   |   |   |   |   |   savings = A63: 2 (3.58/1.32)
+|   |   |   |   |   |   |   |   savings = A64: 1 (0.64)
+|   |   |   |   |   |   |   |   savings = A62: 2 (3.59/0.79)
+|   |   |   |   |   |   |   people > 1
+|   |   |   |   |   |   |   |   residence <= 3: 2 (6.45/1.02)
+|   |   |   |   |   |   |   |   residence > 3: 1 (3.88/0.35)
+|   |   |   |   |   |   purpose = A46
+|   |   |   |   |   |   |   cr_history = A34: 1 (8.03/1.4)
+|   |   |   |   |   |   |   cr_history = A32: 2 (9.77/0.71)
+|   |   |   |   |   |   |   cr_history = A33: 2 (0.37)
+|   |   |   |   |   |   |   cr_history = A30: 2 (0.0)
+|   |   |   |   |   |   |   cr_history = A31: 2 (0.0)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   cr_history = A34: 1 (13.02)
+|   |   |   |   |   |   |   cr_history = A32
+|   |   |   |   |   |   |   |   savings = A65: 1 (4.23/0.35)
+|   |   |   |   |   |   |   |   savings = A61: 2 (28.8/5.76)
+|   |   |   |   |   |   |   |   savings = A63: 2 (0.0)
+|   |   |   |   |   |   |   |   savings = A64: 1 (0.75)
+|   |   |   |   |   |   |   |   savings = A62: 1 (0.35)
+|   |   |   |   |   |   |   cr_history = A33: 1 (4.33/0.47)
+|   |   |   |   |   |   |   cr_history = A30: 1 (0.0)
+|   |   |   |   |   |   |   cr_history = A31: 2 (0.93/0.37)
+|   |   |   |   |   |   purpose = A40
+|   |   |   |   |   |   |   other_install = A143
+|   |   |   |   |   |   |   |   tel = A192
+|   |   |   |   |   |   |   |   |   checking = A11: 1 (13.89/0.4)
+|   |   |   |   |   |   |   |   |   checking = A12: 2 (2.67/0.55)
+|   |   |   |   |   |   |   |   |   checking = A14: 1 (7.65)
+|   |   |   |   |   |   |   |   |   checking = A13: 2 (1.81)
+|   |   |   |   |   |   |   |   tel = A191
+|   |   |   |   |   |   |   |   |   people <= 1
+|   |   |   |   |   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   |   |   |   |   emp_status = A75
+|   |   |   |   |   |   |   |   |   |   |   |   property = A121: 1 (5.72/2.14)
+|   |   |   |   |   |   |   |   |   |   |   |   property = A122: 2 (2.08/0.26)
+|   |   |   |   |   |   |   |   |   |   |   |   property = A124: 2 (0.0)
+|   |   |   |   |   |   |   |   |   |   |   |   property = A123: 2 (0.0)
+|   |   |   |   |   |   |   |   |   |   |   emp_status = A73: 2 (3.14/0.94)
+|   |   |   |   |   |   |   |   |   |   |   emp_status = A74: 2 (3.13)
+|   |   |   |   |   |   |   |   |   |   |   emp_status = A71: 1 (0.0)
+|   |   |   |   |   |   |   |   |   |   |   emp_status = A72: 1 (7.43)
+|   |   |   |   |   |   |   |   |   |   marital_status = A92: 2 (7.34/0.67)
+|   |   |   |   |   |   |   |   |   |   marital_status = A91: 2 (3.31)
+|   |   |   |   |   |   |   |   |   |   marital_status = A94: 1 (2.65/0.82)
+|   |   |   |   |   |   |   |   |   people > 1: 2 (9.75/0.7)
+|   |   |   |   |   |   |   other_install = A141: 2 (9.9)
+|   |   |   |   |   |   |   other_install = A142: 2 (1.73)
+|   |   |   |   |   |   purpose = A41: 1 (11.72/1.84)
+|   |   |   |   |   |   purpose = A49
+|   |   |   |   |   |   |   checking = A11: 1 (4.8)
+|   |   |   |   |   |   |   checking = A12: 1 (15.74/1.82)
+|   |   |   |   |   |   |   checking = A14
+|   |   |   |   |   |   |   |   checking_duration <= 22: 2 (6.01/0.83)
+|   |   |   |   |   |   |   |   checking_duration > 22: 1 (4.61)
+|   |   |   |   |   |   |   checking = A13: 2 (1.81)
+|   |   |   |   |   |   purpose = A44
+|   |   |   |   |   |   |   tel = A192: 2 (4.47/0.03)
+|   |   |   |   |   |   |   tel = A191: 1 (4.5)
+|   |   |   |   |   |   purpose = A45
+|   |   |   |   |   |   |   age <= 27: 1 (3.54/0.18)
+|   |   |   |   |   |   |   age > 27: 2 (5.53/0.58)
+|   |   |   |   |   |   purpose = A410: 2 (1.77/0.21)
+|   |   |   |   |   |   purpose = A48: 1 (3.6)
+|   |   |   |   |   age > 47
+|   |   |   |   |   |   cr_history = A34
+|   |   |   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   |   |   checking = A11: 2 (2.09)
+|   |   |   |   |   |   |   |   checking = A12: 1 (0.0)
+|   |   |   |   |   |   |   |   checking = A14: 1 (2.72)
+|   |   |   |   |   |   |   |   checking = A13: 1 (0.0)
+|   |   |   |   |   |   |   install_rate > 3: 1 (22.14/0.21)
+|   |   |   |   |   |   cr_history = A32: 1 (31.26/2.2)
+|   |   |   |   |   |   cr_history = A33: 2 (2.44/0.35)
+|   |   |   |   |   |   cr_history = A30: 2 (0.21)
+|   |   |   |   |   |   cr_history = A31
+|   |   |   |   |   |   |   emp_status = A75: 1 (0.0)
+|   |   |   |   |   |   |   emp_status = A73: 1 (0.0)
+|   |   |   |   |   |   |   emp_status = A74: 1 (4.16)
+|   |   |   |   |   |   |   emp_status = A71: 2 (2.21)
+|   |   |   |   |   |   |   emp_status = A72: 1 (0.0)
+|   |   |   |   foreign = A202: 1 (10.21)
+|   |   |   housing = A153
+|   |   |   |   people <= 1
+|   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   tel = A192
+|   |   |   |   |   |   |   debtor = A101
+|   |   |   |   |   |   |   |   install_rate <= 3: 2 (5.8)
+|   |   |   |   |   |   |   |   install_rate > 3
+|   |   |   |   |   |   |   |   |   checking_duration <= 30
+|   |   |   |   |   |   |   |   |   |   savings = A65: 2 (2.37/0.56)
+|   |   |   |   |   |   |   |   |   |   savings = A61: 1 (4.9/0.18)
+|   |   |   |   |   |   |   |   |   |   savings = A63: 1 (0.21)
+|   |   |   |   |   |   |   |   |   |   savings = A64: 1 (0.0)
+|   |   |   |   |   |   |   |   |   |   savings = A62: 1 (0.0)
+|   |   |   |   |   |   |   |   |   checking_duration > 30: 2 (6.02)
+|   |   |   |   |   |   |   debtor = A103: 2 (0.0)
+|   |   |   |   |   |   |   debtor = A102: 1 (2.61)
+|   |   |   |   |   |   tel = A191: 1 (7.89/0.62)
+|   |   |   |   |   marital_status = A92: 2 (8.25/1.08)
+|   |   |   |   |   marital_status = A91: 1 (0.06/0.03)
+|   |   |   |   |   marital_status = A94: 1 (0.03)
+|   |   |   |   people > 1: 2 (13.32/1.4)
+|   |   |   housing = A151
+|   |   |   |   checking = A11
+|   |   |   |   |   purpose = A43
+|   |   |   |   |   |   property = A121: 1 (1.81)
+|   |   |   |   |   |   property = A122: 1 (4.23/0.03)
+|   |   |   |   |   |   property = A124: 1 (0.0)
+|   |   |   |   |   |   property = A123: 2 (4.2)
+|   |   |   |   |   purpose = A46: 1 (2.96/0.35)
+|   |   |   |   |   purpose = A42: 2 (7.2/1.28)
+|   |   |   |   |   purpose = A40: 2 (8.19/0.03)
+|   |   |   |   |   purpose = A41: 2 (0.0)
+|   |   |   |   |   purpose = A49: 2 (0.35)
+|   |   |   |   |   purpose = A44: 2 (0.03)
+|   |   |   |   |   purpose = A45: 2 (0.0)
+|   |   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   |   checking = A12
+|   |   |   |   |   emp_status = A75: 2 (1.87/0.03)
+|   |   |   |   |   emp_status = A73: 1 (0.71/0.35)
+|   |   |   |   |   emp_status = A74: 1 (11.71)
+|   |   |   |   |   emp_status = A71: 2 (0.0)
+|   |   |   |   |   emp_status = A72: 2 (23.6/0.47)
+|   |   |   |   checking = A14: 1 (16.31/4.02)
+|   |   |   |   checking = A13: 1 (9.95)
+|   checking_duration > 39
+|   |   residence <= 1: 1 (3.02)
+|   |   residence > 1
+|   |   |   savings = A65
+|   |   |   |   people <= 1: 2 (4.39/0.74)
+|   |   |   |   people > 1: 1 (3.66)
+|   |   |   savings = A61: 2 (32.18/2.34)
+|   |   |   savings = A63: 1 (0.37)
+|   |   |   savings = A64: 2 (0.0)
+|   |   |   savings = A62: 2 (6.58/0.42)
+
+Number of Leaves  : 	203
+
+Size of the tree : 	278
+
+
+Weight: 2.63
+
+J48 pruned tree
+------------------
+
+checking_duration <= 8
+|   cr_amount <= 3380
+|   |   residence <= 3: 1 (33.5/3.21)
+|   |   residence > 3
+|   |   |   age <= 26: 2 (3.57/0.2)
+|   |   |   age > 26: 1 (20.29/1.32)
+|   cr_amount > 3380: 2 (6.21/0.8)
+checking_duration > 8
+|   job = A173
+|   |   checking_duration <= 15
+|   |   |   purpose = A43
+|   |   |   |   age <= 22
+|   |   |   |   |   emp_status = A75: 2 (0.0)
+|   |   |   |   |   emp_status = A73: 1 (3.58)
+|   |   |   |   |   emp_status = A74: 2 (1.82)
+|   |   |   |   |   emp_status = A71: 2 (0.0)
+|   |   |   |   |   emp_status = A72: 2 (3.68)
+|   |   |   |   age > 22: 1 (41.58/3.55)
+|   |   |   purpose = A46: 1 (9.26/1.19)
+|   |   |   purpose = A42: 1 (38.3/5.27)
+|   |   |   purpose = A40
+|   |   |   |   checking_duration <= 11: 1 (6.6/1.68)
+|   |   |   |   checking_duration > 11
+|   |   |   |   |   debtor = A101
+|   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   cr_amount <= 1206: 2 (3.09/0.02)
+|   |   |   |   |   |   |   cr_amount > 1206: 1 (10.6)
+|   |   |   |   |   |   marital_status = A92: 2 (6.38/2.08)
+|   |   |   |   |   |   marital_status = A91: 2 (3.14)
+|   |   |   |   |   |   marital_status = A94: 2 (4.96/2.42)
+|   |   |   |   |   debtor = A103: 1 (0.02)
+|   |   |   |   |   debtor = A102: 2 (2.61)
+|   |   |   purpose = A41: 1 (3.89/0.99)
+|   |   |   purpose = A49: 1 (4.16)
+|   |   |   purpose = A44: 1 (0.99/0.21)
+|   |   |   purpose = A45: 2 (4.74/0.42)
+|   |   |   purpose = A410: 1 (0.0)
+|   |   |   purpose = A48: 2 (1.17/0.18)
+|   |   checking_duration > 15
+|   |   |   debtor = A101
+|   |   |   |   cr_amount <= 7763
+|   |   |   |   |   emp_status = A75
+|   |   |   |   |   |   checking_duration <= 45
+|   |   |   |   |   |   |   cr_amount <= 6314: 1 (56.6/5.97)
+|   |   |   |   |   |   |   cr_amount > 6314: 2 (4.69/1.23)
+|   |   |   |   |   |   checking_duration > 45: 2 (5.9/1.43)
+|   |   |   |   |   emp_status = A73
+|   |   |   |   |   |   purpose = A43
+|   |   |   |   |   |   |   savings = A65: 1 (2.48)
+|   |   |   |   |   |   |   savings = A61
+|   |   |   |   |   |   |   |   install_rate <= 2
+|   |   |   |   |   |   |   |   |   property = A121: 2 (5.64/1.4)
+|   |   |   |   |   |   |   |   |   property = A122: 2 (0.0)
+|   |   |   |   |   |   |   |   |   property = A124: 2 (0.0)
+|   |   |   |   |   |   |   |   |   property = A123: 1 (2.46)
+|   |   |   |   |   |   |   |   install_rate > 2: 2 (22.33/0.66)
+|   |   |   |   |   |   |   savings = A63: 2 (0.0)
+|   |   |   |   |   |   |   savings = A64: 1 (0.02)
+|   |   |   |   |   |   |   savings = A62: 2 (2.28)
+|   |   |   |   |   |   purpose = A46
+|   |   |   |   |   |   |   checking = A11: 2 (0.22)
+|   |   |   |   |   |   |   checking = A12: 1 (2.58/0.02)
+|   |   |   |   |   |   |   checking = A14: 2 (11.48/1.18)
+|   |   |   |   |   |   |   checking = A13: 2 (0.0)
+|   |   |   |   |   |   purpose = A42
+|   |   |   |   |   |   |   age <= 24: 2 (7.53/0.28)
+|   |   |   |   |   |   |   age > 24: 1 (24.86/0.28)
+|   |   |   |   |   |   purpose = A40
+|   |   |   |   |   |   |   checking_duration <= 30: 2 (9.63/2.79)
+|   |   |   |   |   |   |   checking_duration > 30: 1 (3.34)
+|   |   |   |   |   |   purpose = A41: 1 (3.04)
+|   |   |   |   |   |   purpose = A49
+|   |   |   |   |   |   |   residence <= 1: 1 (2.95)
+|   |   |   |   |   |   |   residence > 1
+|   |   |   |   |   |   |   |   existing_cr <= 1: 2 (14.08/0.22)
+|   |   |   |   |   |   |   |   existing_cr > 1: 1 (3.08/1.12)
+|   |   |   |   |   |   purpose = A44: 2 (0.19)
+|   |   |   |   |   |   purpose = A45: 1 (4.18)
+|   |   |   |   |   |   purpose = A410: 1 (1.15)
+|   |   |   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   |   |   emp_status = A74
+|   |   |   |   |   |   property = A121: 2 (13.73/0.59)
+|   |   |   |   |   |   property = A122
+|   |   |   |   |   |   |   residence <= 2: 2 (8.11/2.37)
+|   |   |   |   |   |   |   residence > 2: 1 (15.29)
+|   |   |   |   |   |   property = A124: 2 (4.31/0.02)
+|   |   |   |   |   |   property = A123: 1 (22.56/3.64)
+|   |   |   |   |   emp_status = A71: 2 (4.89/1.76)
+|   |   |   |   |   emp_status = A72
+|   |   |   |   |   |   residence <= 2
+|   |   |   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   |   |   tel = A192: 2 (6.03/1.29)
+|   |   |   |   |   |   |   |   tel = A191: 1 (5.16/1.11)
+|   |   |   |   |   |   |   install_rate > 3: 1 (12.79/0.16)
+|   |   |   |   |   |   residence > 2
+|   |   |   |   |   |   |   age <= 22: 1 (2.45)
+|   |   |   |   |   |   |   age > 22: 2 (27.63/3.48)
+|   |   |   |   cr_amount > 7763
+|   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   purpose = A43: 1 (4.69)
+|   |   |   |   |   |   purpose = A46: 2 (2.87/0.09)
+|   |   |   |   |   |   purpose = A42: 2 (0.84)
+|   |   |   |   |   |   purpose = A40
+|   |   |   |   |   |   |   age <= 40: 2 (4.09)
+|   |   |   |   |   |   |   age > 40: 1 (2.8/0.84)
+|   |   |   |   |   |   purpose = A41: 2 (19.59/0.16)
+|   |   |   |   |   |   purpose = A49: 2 (20.07/1.15)
+|   |   |   |   |   |   purpose = A44: 2 (0.0)
+|   |   |   |   |   |   purpose = A45: 2 (0.0)
+|   |   |   |   |   |   purpose = A410: 2 (0.0)
+|   |   |   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   cr_amount <= 9629: 1 (8.19/0.84)
+|   |   |   |   |   |   cr_amount > 9629: 2 (2.3/0.02)
+|   |   |   |   |   marital_status = A91: 2 (1.03/0.19)
+|   |   |   |   |   marital_status = A94: 2 (0.0)
+|   |   |   debtor = A103
+|   |   |   |   people <= 1: 2 (9.94/3.13)
+|   |   |   |   people > 1: 1 (3.71)
+|   |   |   debtor = A102
+|   |   |   |   tel = A192: 1 (2.94/0.31)
+|   |   |   |   tel = A191: 2 (21.99/1.49)
+|   job = A172
+|   |   foreign = A201
+|   |   |   savings = A65
+|   |   |   |   people <= 1: 1 (14.44/0.97)
+|   |   |   |   people > 1: 2 (4.11/0.52)
+|   |   |   savings = A61
+|   |   |   |   property = A121
+|   |   |   |   |   emp_status = A75
+|   |   |   |   |   |   other_install = A143: 1 (3.87)
+|   |   |   |   |   |   other_install = A141: 1 (1.3)
+|   |   |   |   |   |   other_install = A142: 2 (2.63)
+|   |   |   |   |   emp_status = A73
+|   |   |   |   |   |   other_install = A143
+|   |   |   |   |   |   |   checking = A11
+|   |   |   |   |   |   |   |   checking_duration <= 15: 1 (3.33/0.19)
+|   |   |   |   |   |   |   |   checking_duration > 15: 2 (4.32/0.16)
+|   |   |   |   |   |   |   checking = A12: 1 (7.75/0.84)
+|   |   |   |   |   |   |   checking = A14: 1 (1.29)
+|   |   |   |   |   |   |   checking = A13: 2 (13.54)
+|   |   |   |   |   |   other_install = A141: 2 (18.13)
+|   |   |   |   |   |   other_install = A142: 1 (1.31)
+|   |   |   |   |   emp_status = A74: 1 (5.48)
+|   |   |   |   |   emp_status = A71: 2 (0.0)
+|   |   |   |   |   emp_status = A72: 2 (32.4/1.19)
+|   |   |   |   property = A122: 1 (8.17/2.42)
+|   |   |   |   property = A124: 2 (7.03/0.02)
+|   |   |   |   property = A123
+|   |   |   |   |   people <= 1
+|   |   |   |   |   |   other_install = A143: 1 (23.16/2.18)
+|   |   |   |   |   |   other_install = A141: 2 (3.95/0.16)
+|   |   |   |   |   |   other_install = A142: 1 (1.4)
+|   |   |   |   |   people > 1: 2 (6.12)
+|   |   |   savings = A63
+|   |   |   |   install_rate <= 3: 1 (3.38)
+|   |   |   |   install_rate > 3: 2 (31.87/1.1)
+|   |   |   savings = A64: 1 (1.9)
+|   |   |   savings = A62
+|   |   |   |   property = A121: 1 (3.0)
+|   |   |   |   property = A122: 1 (2.35/0.19)
+|   |   |   |   property = A124: 2 (2.93)
+|   |   |   |   property = A123: 2 (6.26/0.31)
+|   |   foreign = A202: 1 (7.6)
+|   job = A174
+|   |   foreign = A201
+|   |   |   other_install = A143
+|   |   |   |   residence <= 3
+|   |   |   |   |   residence <= 1: 1 (7.26/1.14)
+|   |   |   |   |   residence > 1
+|   |   |   |   |   |   purpose = A43
+|   |   |   |   |   |   |   existing_cr <= 1: 1 (4.16/0.84)
+|   |   |   |   |   |   |   existing_cr > 1: 2 (2.34/0.2)
+|   |   |   |   |   |   purpose = A46: 2 (3.46)
+|   |   |   |   |   |   purpose = A42: 2 (8.66/1.93)
+|   |   |   |   |   |   purpose = A40
+|   |   |   |   |   |   |   checking_duration <= 24: 1 (7.76/1.34)
+|   |   |   |   |   |   |   checking_duration > 24: 2 (6.38)
+|   |   |   |   |   |   purpose = A41: 1 (6.65/0.14)
+|   |   |   |   |   |   purpose = A49: 1 (5.06/0.97)
+|   |   |   |   |   |   purpose = A44: 2 (0.0)
+|   |   |   |   |   |   purpose = A45: 2 (0.0)
+|   |   |   |   |   |   purpose = A410: 2 (4.18/1.55)
+|   |   |   |   |   |   purpose = A48: 2 (0.0)
+|   |   |   |   residence > 3
+|   |   |   |   |   cr_amount <= 7166: 1 (22.77/1.37)
+|   |   |   |   |   cr_amount > 7166
+|   |   |   |   |   |   checking_duration <= 21: 2 (3.96)
+|   |   |   |   |   |   checking_duration > 21: 1 (8.68/0.68)
+|   |   |   other_install = A141: 1 (26.75/2.76)
+|   |   |   other_install = A142: 2 (5.85/1.2)
+|   |   foreign = A202: 2 (2.52)
+|   job = A171
+|   |   residence <= 1: 2 (3.57)
+|   |   residence > 1: 1 (14.18/1.87)
+
+Number of Leaves  : 	134
+
+Size of the tree : 	196
+
+
+Weight: 2.33
+
+J48 pruned tree
+------------------
+
+foreign = A201
+|   age <= 23
+|   |   checking = A11
+|   |   |   tel = A192: 1 (4.93/0.09)
+|   |   |   tel = A191: 2 (19.98/6.07)
+|   |   checking = A12
+|   |   |   cr_amount <= 2002: 1 (31.83/3.44)
+|   |   |   cr_amount > 2002: 2 (9.37/1.82)
+|   |   checking = A14
+|   |   |   debtor = A101
+|   |   |   |   residence <= 1: 2 (5.75)
+|   |   |   |   residence > 1: 1 (22.78/2.28)
+|   |   |   debtor = A103: 1 (0.0)
+|   |   |   debtor = A102: 2 (6.1)
+|   |   checking = A13: 1 (19.38)
+|   age > 23
+|   |   cr_amount <= 2327
+|   |   |   checking = A11
+|   |   |   |   checking_duration <= 16
+|   |   |   |   |   checking_duration <= 12
+|   |   |   |   |   |   debtor = A101
+|   |   |   |   |   |   |   checking_duration <= 8: 1 (8.56/1.13)
+|   |   |   |   |   |   |   checking_duration > 8: 2 (33.49/8.84)
+|   |   |   |   |   |   debtor = A103: 1 (0.11)
+|   |   |   |   |   |   debtor = A102: 1 (2.02)
+|   |   |   |   |   checking_duration > 12: 1 (12.33/0.2)
+|   |   |   |   checking_duration > 16: 2 (57.43/6.66)
+|   |   |   checking = A12
+|   |   |   |   cr_history = A34: 2 (31.55/2.96)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   checking_duration <= 11
+|   |   |   |   |   |   residence <= 1
+|   |   |   |   |   |   |   tel = A192: 1 (2.97)
+|   |   |   |   |   |   |   tel = A191: 2 (5.55)
+|   |   |   |   |   |   residence > 1: 1 (20.08/0.54)
+|   |   |   |   |   checking_duration > 11
+|   |   |   |   |   |   checking_duration <= 16: 2 (31.38/3.43)
+|   |   |   |   |   |   checking_duration > 16
+|   |   |   |   |   |   |   marital_status = A93: 1 (4.91)
+|   |   |   |   |   |   |   marital_status = A92: 2 (2.83/0.63)
+|   |   |   |   |   |   |   marital_status = A91: 1 (0.0)
+|   |   |   |   |   |   |   marital_status = A94: 1 (0.81)
+|   |   |   |   cr_history = A33
+|   |   |   |   |   age <= 44: 1 (3.84/0.95)
+|   |   |   |   |   age > 44: 2 (10.45)
+|   |   |   |   cr_history = A30: 2 (7.63/0.77)
+|   |   |   |   cr_history = A31: 2 (27.96)
+|   |   |   checking = A14
+|   |   |   |   job = A173
+|   |   |   |   |   savings = A65: 1 (5.91)
+|   |   |   |   |   savings = A61: 1 (23.89/1.64)
+|   |   |   |   |   savings = A63: 1 (4.34/0.65)
+|   |   |   |   |   savings = A64: 1 (0.97/0.46)
+|   |   |   |   |   savings = A62
+|   |   |   |   |   |   existing_cr <= 1: 1 (2.77)
+|   |   |   |   |   |   existing_cr > 1: 2 (5.2/0.19)
+|   |   |   |   job = A172
+|   |   |   |   |   existing_cr <= 1: 2 (36.61/5.82)
+|   |   |   |   |   existing_cr > 1: 1 (2.54)
+|   |   |   |   job = A174: 1 (9.43/0.53)
+|   |   |   |   job = A171: 1 (2.27)
+|   |   |   checking = A13
+|   |   |   |   age <= 39
+|   |   |   |   |   checking_duration <= 7: 1 (3.05)
+|   |   |   |   |   checking_duration > 7: 2 (31.8/2.71)
+|   |   |   |   age > 39: 1 (9.88/1.25)
+|   |   cr_amount > 2327
+|   |   |   debtor = A101
+|   |   |   |   cr_history = A34
+|   |   |   |   |   cr_amount <= 7763: 1 (62.16/6.27)
+|   |   |   |   |   cr_amount > 7763
+|   |   |   |   |   |   job = A173: 2 (18.67/1.31)
+|   |   |   |   |   |   job = A172: 2 (0.65)
+|   |   |   |   |   |   job = A174: 1 (4.81/1.25)
+|   |   |   |   |   |   job = A171: 2 (0.0)
+|   |   |   |   cr_history = A32
+|   |   |   |   |   purpose = A43
+|   |   |   |   |   |   existing_cr <= 1
+|   |   |   |   |   |   |   other_install = A143
+|   |   |   |   |   |   |   |   cr_amount <= 3878: 1 (14.64/2.52)
+|   |   |   |   |   |   |   |   cr_amount > 3878: 2 (21.9/2.93)
+|   |   |   |   |   |   |   other_install = A141: 1 (2.16)
+|   |   |   |   |   |   |   other_install = A142: 1 (2.75)
+|   |   |   |   |   |   existing_cr > 1: 2 (15.52/0.12)
+|   |   |   |   |   purpose = A46: 2 (4.44/2.18)
+|   |   |   |   |   purpose = A42
+|   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   emp_status = A75: 2 (6.53/1.5)
+|   |   |   |   |   |   |   emp_status = A73: 1 (11.53/0.05)
+|   |   |   |   |   |   |   emp_status = A74: 2 (0.93/0.01)
+|   |   |   |   |   |   |   emp_status = A71: 1 (9.99/1.31)
+|   |   |   |   |   |   |   emp_status = A72: 1 (0.06)
+|   |   |   |   |   |   marital_status = A92
+|   |   |   |   |   |   |   residence <= 3: 2 (3.87/0.94)
+|   |   |   |   |   |   |   residence > 3: 1 (11.72/0.53)
+|   |   |   |   |   |   marital_status = A91: 2 (11.74/1.04)
+|   |   |   |   |   |   marital_status = A94: 1 (0.0)
+|   |   |   |   |   purpose = A40
+|   |   |   |   |   |   install_rate <= 2
+|   |   |   |   |   |   |   cr_amount <= 11328: 1 (23.84/1.41)
+|   |   |   |   |   |   |   cr_amount > 11328: 2 (2.21)
+|   |   |   |   |   |   install_rate > 2
+|   |   |   |   |   |   |   savings = A65: 1 (2.45)
+|   |   |   |   |   |   |   savings = A61: 2 (7.33/0.77)
+|   |   |   |   |   |   |   savings = A63: 2 (0.0)
+|   |   |   |   |   |   |   savings = A64: 2 (0.0)
+|   |   |   |   |   |   |   savings = A62: 1 (2.02/0.89)
+|   |   |   |   |   purpose = A41
+|   |   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   |   install_rate <= 2
+|   |   |   |   |   |   |   |   people <= 1: 1 (4.92/1.07)
+|   |   |   |   |   |   |   |   people > 1: 2 (2.3/0.53)
+|   |   |   |   |   |   |   install_rate > 2: 2 (12.19/0.11)
+|   |   |   |   |   |   install_rate > 3
+|   |   |   |   |   |   |   cr_amount <= 5595: 1 (10.53)
+|   |   |   |   |   |   |   cr_amount > 5595: 2 (2.2/0.63)
+|   |   |   |   |   purpose = A49: 2 (16.49/2.23)
+|   |   |   |   |   purpose = A44: 2 (0.1)
+|   |   |   |   |   purpose = A45: 1 (3.87/1.87)
+|   |   |   |   |   purpose = A410: 1 (0.85)
+|   |   |   |   |   purpose = A48: 1 (0.0)
+|   |   |   |   cr_history = A33
+|   |   |   |   |   age <= 28: 2 (12.11/1.32)
+|   |   |   |   |   age > 28: 1 (34.3/5.2)
+|   |   |   |   cr_history = A30
+|   |   |   |   |   other_install = A143
+|   |   |   |   |   |   checking = A11: 2 (4.39)
+|   |   |   |   |   |   checking = A12
+|   |   |   |   |   |   |   residence <= 1: 1 (2.07/0.53)
+|   |   |   |   |   |   |   residence > 1: 2 (13.78)
+|   |   |   |   |   |   checking = A14: 1 (2.03)
+|   |   |   |   |   |   checking = A13: 1 (0.06)
+|   |   |   |   |   other_install = A141: 1 (15.29/0.72)
+|   |   |   |   |   other_install = A142: 2 (7.26)
+|   |   |   |   cr_history = A31
+|   |   |   |   |   checking_duration <= 36: 2 (18.1/2.7)
+|   |   |   |   |   checking_duration > 36: 1 (3.86/0.72)
+|   |   |   debtor = A103: 1 (13.3/2.17)
+|   |   |   debtor = A102
+|   |   |   |   emp_status = A75: 1 (4.79/0.64)
+|   |   |   |   emp_status = A73: 2 (4.62/0.23)
+|   |   |   |   emp_status = A74: 2 (2.66/0.94)
+|   |   |   |   emp_status = A71: 1 (10.97)
+|   |   |   |   emp_status = A72: 2 (0.92)
+foreign = A202
+|   checking = A11: 1 (22.4/0.92)
+|   checking = A12: 2 (6.78/0.31)
+|   checking = A14: 1 (0.79)
+|   checking = A13: 1 (1.44)
+
+Number of Leaves  : 	99
+
+Size of the tree : 	150
+
+
+Weight: 2.19
+
+J48 pruned tree
+------------------
+
+purpose = A43
+|   cr_history = A34
+|   |   housing = A152
+|   |   |   checking_duration <= 36: 1 (23.53/1.2)
+|   |   |   checking_duration > 36: 2 (2.77/0.05)
+|   |   housing = A153: 2 (3.15/0.11)
+|   |   housing = A151: 1 (1.25)
+|   cr_history = A32
+|   |   install_rate <= 2
+|   |   |   residence <= 1: 2 (20.2/1.7)
+|   |   |   residence > 1
+|   |   |   |   housing = A152
+|   |   |   |   |   tel = A192: 1 (5.91/0.51)
+|   |   |   |   |   tel = A191: 2 (15.75/1.42)
+|   |   |   |   housing = A153: 1 (0.03)
+|   |   |   |   housing = A151: 1 (8.78/0.54)
+|   |   install_rate > 2
+|   |   |   residence <= 1: 1 (25.95/0.3)
+|   |   |   residence > 1
+|   |   |   |   foreign = A201
+|   |   |   |   |   age <= 37
+|   |   |   |   |   |   housing = A152
+|   |   |   |   |   |   |   debtor = A101
+|   |   |   |   |   |   |   |   property = A121: 2 (13.8/0.88)
+|   |   |   |   |   |   |   |   property = A122: 1 (2.9/0.07)
+|   |   |   |   |   |   |   |   property = A124: 2 (0.05)
+|   |   |   |   |   |   |   |   property = A123
+|   |   |   |   |   |   |   |   |   install_rate <= 3
+|   |   |   |   |   |   |   |   |   |   age <= 33: 1 (5.48/0.04)
+|   |   |   |   |   |   |   |   |   |   age > 33: 2 (3.5)
+|   |   |   |   |   |   |   |   |   install_rate > 3: 2 (20.74/5.37)
+|   |   |   |   |   |   |   debtor = A103: 1 (0.64)
+|   |   |   |   |   |   |   debtor = A102: 1 (2.05/0.4)
+|   |   |   |   |   |   housing = A153: 1 (1.16/0.3)
+|   |   |   |   |   |   housing = A151: 1 (5.4/1.38)
+|   |   |   |   |   age > 37
+|   |   |   |   |   |   install_rate <= 3: 1 (11.43)
+|   |   |   |   |   |   install_rate > 3
+|   |   |   |   |   |   |   marital_status = A93: 2 (6.86/1.15)
+|   |   |   |   |   |   |   marital_status = A92: 1 (8.16/0.3)
+|   |   |   |   |   |   |   marital_status = A91: 1 (0.0)
+|   |   |   |   |   |   |   marital_status = A94: 1 (2.33)
+|   |   |   |   foreign = A202: 1 (2.17)
+|   cr_history = A33: 1 (18.64/1.96)
+|   cr_history = A30: 2 (4.04/0.3)
+|   cr_history = A31
+|   |   age <= 31: 2 (2.36/0.35)
+|   |   age > 31: 1 (8.39)
+purpose = A46
+|   savings = A65: 1 (10.42/0.3)
+|   savings = A61
+|   |   checking_duration <= 42
+|   |   |   age <= 38: 2 (19.43/1.72)
+|   |   |   age > 38: 1 (6.14/1.86)
+|   |   checking_duration > 42: 1 (7.33/0.44)
+|   savings = A63: 1 (0.09)
+|   savings = A64: 2 (5.64)
+|   savings = A62: 2 (4.8/0.81)
+purpose = A42
+|   savings = A65: 1 (19.05/1.7)
+|   savings = A61
+|   |   cr_history = A34
+|   |   |   install_rate <= 3
+|   |   |   |   debtor = A101: 2 (16.17/2.34)
+|   |   |   |   debtor = A103: 1 (0.51)
+|   |   |   |   debtor = A102: 1 (4.21)
+|   |   |   install_rate > 3: 1 (14.31/0.3)
+|   |   cr_history = A32
+|   |   |   checking_duration <= 9
+|   |   |   |   checking = A11: 1 (0.95)
+|   |   |   |   checking = A12: 2 (8.86)
+|   |   |   |   checking = A14
+|   |   |   |   |   cr_amount <= 1872: 1 (2.44)
+|   |   |   |   |   cr_amount > 1872: 2 (5.67)
+|   |   |   |   checking = A13: 1 (0.0)
+|   |   |   checking_duration > 9
+|   |   |   |   residence <= 3
+|   |   |   |   |   age <= 35
+|   |   |   |   |   |   marital_status = A93
+|   |   |   |   |   |   |   tel = A192: 1 (4.83)
+|   |   |   |   |   |   |   tel = A191: 2 (14.84/2.47)
+|   |   |   |   |   |   marital_status = A92: 1 (17.31/1.39)
+|   |   |   |   |   |   marital_status = A91: 1 (8.69)
+|   |   |   |   |   |   marital_status = A94: 1 (2.27)
+|   |   |   |   |   age > 35: 2 (15.94/2.06)
+|   |   |   |   residence > 3: 1 (32.02/2.24)
+|   |   cr_history = A33: 2 (13.33/0.59)
+|   |   cr_history = A30
+|   |   |   housing = A152: 1 (4.36)
+|   |   |   housing = A153: 2 (0.44)
+|   |   |   housing = A151: 2 (3.93)
+|   |   cr_history = A31: 2 (0.99)
+|   savings = A63
+|   |   job = A173: 1 (3.97/0.7)
+|   |   job = A172: 2 (5.0)
+|   |   job = A174: 2 (0.0)
+|   |   job = A171: 2 (0.0)
+|   savings = A64: 1 (8.6)
+|   savings = A62: 1 (3.14/1.41)
+purpose = A40
+|   property = A121
+|   |   checking_duration <= 22
+|   |   |   existing_cr <= 2: 1 (45.65/3.32)
+|   |   |   existing_cr > 2: 2 (3.62/0.7)
+|   |   checking_duration > 22
+|   |   |   job = A173: 2 (11.91/1.18)
+|   |   |   job = A172: 1 (4.14/0.51)
+|   |   |   job = A174: 2 (0.0)
+|   |   |   job = A171: 2 (0.0)
+|   property = A122
+|   |   other_install = A143
+|   |   |   existing_cr <= 1
+|   |   |   |   people <= 1: 2 (23.74/3.95)
+|   |   |   |   people > 1: 1 (2.12/0.59)
+|   |   |   existing_cr > 1
+|   |   |   |   housing = A152: 1 (12.61/0.84)
+|   |   |   |   housing = A153: 1 (0.0)
+|   |   |   |   housing = A151: 2 (3.12)
+|   |   other_install = A141: 2 (17.97/0.03)
+|   |   other_install = A142: 2 (7.43)
+|   property = A124
+|   |   age <= 58: 2 (34.46/4.95)
+|   |   age > 58: 1 (3.74/0.43)
+|   property = A123
+|   |   checking_duration <= 22
+|   |   |   age <= 66: 1 (34.4/4.32)
+|   |   |   age > 66: 2 (3.09/0.45)
+|   |   checking_duration > 22
+|   |   |   other_install = A143
+|   |   |   |   savings = A65: 1 (1.82)
+|   |   |   |   savings = A61: 2 (31.18/1.2)
+|   |   |   |   savings = A63: 1 (0.43)
+|   |   |   |   savings = A64: 1 (0.03)
+|   |   |   |   savings = A62: 2 (3.51/0.4)
+|   |   |   other_install = A141: 1 (4.45/0.44)
+|   |   |   other_install = A142: 2 (0.0)
+purpose = A41
+|   debtor = A101
+|   |   cr_amount <= 3380: 1 (14.32)
+|   |   cr_amount > 3380
+|   |   |   savings = A65
+|   |   |   |   install_rate <= 3: 1 (3.91/0.85)
+|   |   |   |   install_rate > 3: 2 (3.73/0.03)
+|   |   |   savings = A61
+|   |   |   |   residence <= 3: 1 (10.91/1.17)
+|   |   |   |   residence > 3
+|   |   |   |   |   people <= 1: 2 (19.89/0.86)
+|   |   |   |   |   people > 1: 1 (5.23/1.32)
+|   |   |   savings = A63: 2 (2.52)
+|   |   |   savings = A64: 1 (3.54)
+|   |   |   savings = A62: 1 (6.42/0.36)
+|   debtor = A103: 1 (5.03)
+|   debtor = A102: 1 (0.6)
+purpose = A49
+|   cr_amount <= 1893: 1 (21.66/0.81)
+|   cr_amount > 1893
+|   |   property = A121: 2 (21.01/2.46)
+|   |   property = A122
+|   |   |   existing_cr <= 2: 1 (16.66/1.03)
+|   |   |   existing_cr > 2: 2 (3.03)
+|   |   property = A124: 2 (9.73/0.69)
+|   |   property = A123
+|   |   |   existing_cr <= 2
+|   |   |   |   age <= 22: 1 (3.81)
+|   |   |   |   age > 22: 2 (32.19/3.65)
+|   |   |   existing_cr > 2: 1 (6.7)
+purpose = A44
+|   install_rate <= 3: 1 (3.62/0.06)
+|   install_rate > 3: 2 (2.54/0.77)
+purpose = A45
+|   property = A121
+|   |   checking_duration <= 16: 1 (2.5/0.51)
+|   |   checking_duration > 16: 2 (4.46/0.9)
+|   property = A122: 1 (0.73/0.26)
+|   property = A124: 2 (16.83/0.06)
+|   property = A123: 1 (5.96/0.3)
+purpose = A410
+|   checking = A11: 1 (6.34/0.26)
+|   checking = A12: 2 (5.91/0.89)
+|   checking = A14: 1 (0.47)
+|   checking = A13: 1 (0.0)
+purpose = A48: 1 (17.19/0.3)
+
+Number of Leaves  : 	120
+
+Size of the tree : 	183
+
+
+Weight: 2.45
+
+Number of performed Iterations: 10
+
+
+Time taken to build model: 0.25 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         707               70.7    %
+Incorrectly Classified Instances       293               29.3    %
+Kappa statistic                          0.2909
+Mean absolute error                      0.2831
+Root mean squared error                  0.4988
+Relative absolute error                 67.3778 %
+Root relative squared error            108.8496 %
+Total Number of Instances             1000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.803    0.517    0.784      0.803    0.793      0.291    0.734     0.849     1
+                 0.483    0.197    0.512      0.483    0.497      0.291    0.734     0.559     2
+Weighted Avg.    0.707    0.421    0.702      0.707    0.704      0.291    0.734     0.762     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 562 138 |   a = 1
+ 155 145 |   b = 2
+
+
