@@ -1,0 +1,31 @@
+Team Code,Name,Seating capacity,Location,Playing surface,Team,Opened,feet to center field,Ballpark typology,Roof type
+ATL,SunTrust Park,41149,Cumberland Georgia,Grass,Atlanta Braves,2017,400,Retro Modern,Open
+MIA,Marlins Park,36742,Miami Florida,Grass,Miami Marlins,2012,407,Contemporary,Retractable
+MIN,Target Field,38885,Minneapolis Minnesota,Grass,Minnesota Twins,2010,404,Retro Modern,Open
+NYN,Citi Field,41922,Queens New York,Grass,New York Mets,2009,408,Retro Classic,Open
+NYA,Yankee Stadium,47422,Bronx New York,Grass,New York Yankees,2009,408,Retro Classic,Open
+WAS,Nationals Park,41339,Washington D.C.,Grass,Washington Nationals,2008,402,Retro Modern,Open
+SLN,Busch Stadium,45529,St. Louis Missouri,Grass,St. Louis Cardinals,2006,400,Retro Classic,Open
+PHI,Citizens Bank Park,43651,Philadelphia Pennsylvania,Grass,Philadelphia Phillies,2004,401,Retro Classic,Open
+SDN,Petco Park,40209,San Diego California,Grass,San Diego Padres,2004,396,Retro Modern,Open
+CIN,Great American Ball Park,42319,Cincinnati Ohio,Grass,Cincinnati Reds,2003,404,Retro Modern,Open
+MIL,Miller Park,41900,Milwaukee Wisconsin,Grass,Milwaukee Brewers,2001,400,Retro Modern,Retractable
+PIT,PNC Park,38362,Pittsburgh Pennsylvania,Grass,Pittsburgh Pirates,2001,399,Retro Classic,Open
+SFN,AT&T Park,41915,San Francisco California,Grass,San Francisco Giants,2000,399,Retro Classic,Open
+DET,Comerica Park,41299,Detroit Michigan,Grass,Detroit Tigers,2000,420,Retro Classic,Open
+HOU,Minute Maid Park,41168,Houston Texas,Grass,Houston Astros,2000,409,Retro Modern,Retractable
+SEA,Safeco Field,47943,Seattle Washington,Grass,Seattle Mariners,1999,401,Retro Modern,Retractable
+ARI,Chase Field,48686,Phoenix Arizona,Grass,Arizona Diamondbacks,1998,407,Retro Modern,Retractable
+COL,Coors Field,50398,Denver Colorado,Grass,Colorado Rockies,1995,415,Retro Classic,Open
+TEX,Globe Life Park in Arlington,48114,Arlington Texas,Grass,Texas Rangers,1994,400,Retro Classic,Open
+CLE,Progressive Field,35051,Cleveland Ohio,Grass,Cleveland Indians,1994,410,Retro Modern,Open
+BAL,Oriole Park at Camden Yards,45971,Baltimore Maryland,Grass,Baltimore Orioles,1992,410,Retro Classic,Open
+CHA,Guaranteed Rate Field,40615,Chicago Illinois,Grass,Chicago White Sox,1991,400,Modern Retro Classic,Open
+TBA,Tropicana Field,31042,St. Petersburg Florida,AstroTurf GameDay Grass,Tampa Bay Rays,1990,404,Multipurpose,Fixed
+TOR,Rogers Centre,49282,Toronto Ontario,AstroTurf GameDay Grass 3D,Toronto Blue Jays,1989,400,Multipurpose,Retractable
+KCA,Kauffman Stadium,37903,Kansas City Missouri,Grass,Kansas City Royals,1973,410,Modern Retro Modern,Open
+ANA,Angel Stadium of Anaheim,45477,Anaheim California,Grass,Los Angeles Angels,1966,396,Modern Retro Modern,Open
+OAK,Oakland–Alameda County Coliseum,47170,Oakland California,Grass,Oakland Athletics,1966,400,Multipurpose,Open
+LAN,Dodger Stadium,56000,Los Angeles California,Grass,Los Angeles Dodgers,1962,400,Modern,Open
+CHN,Wrigley Field,41268,Chicago Illinois,Grass,Chicago Cubs,1914,400,Jewel Box,Open
+BOS,Fenway Park,37731,Boston Massachusetts,Grass,Boston Red Sox,1912,420,Jewel Box,Open
