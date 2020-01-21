@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>Color Guessing Game</title>
+        <meta name="author" content="Anthony Valencia">
+        <meta name="week" content="2">
+        <meta name="part" content="2">
+        <script>
+          var colors = ["Red", "Cyan", "Blue", "DarkBlue", "LightBlue",
+          "Purple", "Yellow", "Lime", "Magenta", "White", "Silver", "Grey",
+          "Black", "Orange", "Brown", "Maroon", "Green", "Olive"];
+          colors = colors.sort();
+
+          var random_color = Math.random() * colors.length;
+          random_color = Math.floor(random_color);
+
+          var guess_count = 1;
+
+          function check_guess(i) {
+            if (i < 0) {
+              alert("I don’t recognize that color!");
+              return false;
+            }
+            else if (i < random_color) {
+              alert("Your input is alphabetically lower than mine!");
+              return false;
+            }
+            else if (i > random_color) {
+              alert("Your input is alphabetically higher than mine!");
+              return false;
+            }
+            else {
+              var final_message = "You are right! You took ";
+              final_message = final_message.concat(guess_count.toString());
+              final_message = final_message.concat(" guesses!");
+              alert(final_message);
+              return true;
+            }
+          }
+
+          function do_game() {
+            var message = "I am thinking of one of these colors:\n\n";
+            var colors_str = colors.join([separator = ', ']);
+            var str = message.concat(colors_str);
+            str = str.concat("\n\nWhat color am I thinking of?");
+
+            var done = false;
+            while(!done) {
+              guess = prompt(str);
+              var i = colors.indexOf(guess);
+              done = check_guess(i);
+              guess_count++;
+            }
+
+            var the_body = document.getElementsByTagName("body")[0];
+            the_body.style.background = colors[i];
+          }
+        </script>
+  </head>
+  <body onload="do_game()">
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>A Dating Website</title>
+      <meta name="author" content="Anthony Valencia">
+      <style>
+        fieldset {
+          background: lightyellow;
+          border: 10px solid yellow;
+          margin-bottom: 10px;
+          width: 720px;
+        }
+
+        label {
+          width: 180px;
+          display: inline-block;
+          text-align: right;
+          vertical-align: top;
+        }
+
+        label:hover {
+          font-size:40px
+        }
+
+        .radio_labels, .checkbox_labels {
+          width: auto;
+        }
+
+        .endcap {
+          text-align: center;
+          vertical-align: top;
+          color: white;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+
+        .endcap.front {
+          background: #993333;
+        }
+
+        .endcap.back {
+          background: #9933CC;
+        }
+
+        textarea {
+          width:360px;
+          height:50px;
+        }
+      </style>
+  </head>
+  <body>
+    <form method="post"  enctype="multipart/form-data" action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+      <fieldset>
+    		<legend>Your Face</legend>
+        <label for="image">Your image:</label>
+        <input type="file" id="image" name="image" required> <br>
+        <label for="preview">Image preview:</label>
+        <img id="preview" name="preview"> <br>
+      </fieldset>
+      <fieldset>
+        <legend>Your General details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required> <br>
+        <label for="genders">Gender:</label>
+        <input type="radio" id="gender_1" name="genders" required>
+        <label for="gender_1" class="radio_labels">Male</label>
+        <input type="radio" id="gender_2" name="genders" required>
+        <label for="gender_2" class="radio_labels">Female</label> <br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="99" step="1" value="18" required> <br>
+        <label for="dob">Date of birth:</label>
+        <input type="date" id="dob" name="dob"> <br>
+        <label for="color">Favorite color:</label>
+        <input type="color" id="color" name="color"> <br>
+        <label for="country">Which country:</label>
+        <select id="country" name="country">
+          <option value="no_selection">no selection</option>
+          <option value="united_states">United States</option>
+          <option value="sweden">Sweden</option>
+          <option value="denmark">Denmark</option>
+          <option value="norway">Norway</option>
+          <option value="iceland">Iceland</option>
+        </select> <br>
+      </fieldset>
+      <fieldset>
+        <legend>Your Indicators</legend>
+        <label for="height">Height:</label>
+        <span class="endcap front">Short</span><input type="range" min="0" max="100" id="height" name="height"><span class="endcap back">Tall</span> <br>
+        <label for="salary">Salary:</label>
+        <span class="endcap front">Poor</span><input type="range" min="0" max="100" id="salary" name="salary"><span class="endcap back">Rich</span> <br>
+      </fieldset>
+      <fieldset>
+        <legend>Your Contact Information</legend>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required> <br>
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile"> <br>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="1" cols="20"></textarea> <br>
+        <label for="contacts">Method to contact you:</label>
+        <input type="checkbox" id="checkbox_1" name="contacts">
+        <label for="checkbox_1" class="checkbox_labels">Email</label>
+        <input type="checkbox" id="checkbox_2" name="contacts">
+        <label for="checkbox_2" class="checkbox_labels">Whatsapp</label>
+        <input type="checkbox" id="checkbox_3" name="contacts">
+        <label for="checkbox_3" class="checkbox_labels">In-app chat</label> <br>
+      </fieldset>
+      <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+  </body>
+</html>

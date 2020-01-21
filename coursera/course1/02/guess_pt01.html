@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title>Color Guessing Game</title>
+        <meta name="author" content="Anthony Valencia">
+        <meta name="week" content="2">
+        <meta name="part" content="1">
+        <script>
+          var colors = ["Red", "Cyan", "Blue", "DarkBlue", "LightBlue",
+          "Purple", "Yellow", "Lime", "Magenta", "White", "Silver", "Grey",
+          "Black", "Orange", "Brown", "Maroon", "Green", "Olive"];
+          colors = colors.sort();
+
+          var random_color = Math.random() * colors.length;
+          random_color = Math.floor(random_color);
+
+          function check_guess(i) {
+            if (i == random_color) {
+              return true;
+            }
+            else {
+              alert("Guess again!");
+              return false;
+            }
+          }
+
+          function do_game() {
+            var message = "I am thinking of one of these colors:\n\n";
+            var colors_str = colors.join([separator = ', ']);
+            var str = message.concat(colors_str);
+            str = str.concat("\n\nWhat color am I thinking of?");
+
+            var declare = "Answer is: ".concat(colors[random_color]);
+            alert(declare);
+
+            var done = false;
+            while(!done) {
+              guess = prompt(str);
+              var i = colors.indexOf(guess);
+              done = check_guess(i);
+            }
+
+            var the_body = document.getElementsByTagName("body")[0];
+            the_body.style.background = colors[i];
+          }
+        </script>
+  </head>
+  <body onload="do_game()">
+  </body>
+</html>
