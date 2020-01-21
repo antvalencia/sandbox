@@ -1,0 +1,42 @@
+Practice Test - Domain 2
+Question 1: Labels
+
+Create a pod named kplabs-label. The pod should be launched from nginx image. The name of container should be nginx-container. Attach following label to the pod.
+
+env=production
+app=webserver
+
+
+Question 2: Deployments
+
+Create a deployment named kplabs-deployment. The deployment should be launched from nginx image. The deployment should have three replicas. The selector should be based on the label of app=nginx
+
+
+
+Question 3: Deployments - Rolling Updates and Rollbacks
+
+Create a deployment named kplabs-updates. The deployment should be launched from nginx image. There should be two  replicas. Verify the status of the deployment. As part of rolling update, update the image to nginx2:alpine. Verify the status of deployment. Perform a rollback to the previous version. Verify the status of deployment.
+
+
+
+Question 4: Labels and Selectors
+
+Create a deployment named kplabs-selector. The pods should be launched from nginx image.The pods should only be launched in a node which has a label of disk=ssd. Observe the status of deployment. Add the appropriate label to the worker node and then observe the status of the deployment.
+
+
+
+Question 5:  CronJob
+
+Create a job named kplabs-job. The job should run every minute and should print out the current date.
+
+
+
+Question 6:  CronJob
+
+Create a job named kplabs-cron. The job should run every minute and should run following command "curl kplabs.in/ping". Terminate the container within 10 seconds if it does not run.
+
+
+
+Question 7:  Deployment Configuration
+
+Create a deployment named kplabs-configuration. The deployment should have 3 replicas of nginx image. Once the deployment is created, verify the maxSurge and maxUnavailable parameters. Edit the the maxUnavailable to 0 and maxSurge to 30% on the live deployment object. Once those two parameters are modified, change the image of the deployment to nginx:alpine. Make sure to use the record instruction on rolling updates.

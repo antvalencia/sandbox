@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mycontainer
+spec:
+  containers:
+  - image: mykplabs/kubernetes:nginx
+    name: mycontainer
+
