@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "\nlibrary(XML)\ndir <-file.path(paste0('.\\\\Crawlers\\\\','EPA\\\\'))\nHTML.dataset <- list.files(dir,pattern =\"html\") # List of all saved HTML files @ location \"dir\"\n\nlibrary(\"rvest\")\nEPA_html <- read_html(\"https://www.epa.gov/\")\n\n\n\n\n\n",
+    "created" : 1511566683524.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "2878525756",
+    "id" : "688D9DE4",
+    "lastKnownWriteTime" : 27303364806049904,
+    "last_content_update" : 1511567311817,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

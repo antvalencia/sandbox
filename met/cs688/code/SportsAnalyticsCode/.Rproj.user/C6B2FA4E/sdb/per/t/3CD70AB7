@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Module 6 - Sports Analytics\n\n#### Basketball Data Analytics ---- \n\n\n# setwd(\"~/MyCourses/CS688/Samples/Module6\")\n\nlibrary(googleVis)\n\nlibrary(SportsAnalytics)\n\nnba0708 <- fetch_NBAPlayerStatistics(\"07-08\")\n\nsave(nba0708, file=\"nba0708.RData\")\n\nload(file=\"nba0708.RData\")\n\nnames(nba0708)\n\nnba0708.bos <- subset(nba0708, Team == 'BOS')\n\nchart1 <- gvisTable(nba0708.bos[,c(2,4:12)])\nplot(chart1)\n\nprint(chart1, file = \"chart1.html\")\n\n\nchart2 <- \n  gvisColumnChart(\n    nba0708.bos,\n    xvar = \"Name\",\n    yvar = c(\"FieldGoalsMade\", \"FieldGoalsAttempted\"),\n    options=list(\n      legend=\"top\",\n      height=500, width=850))\nplot(chart2)\n\nprint(chart2, file = \"chart2.html\")\n\n\n\n#### Basketball Championship Data -----\nlibrary(googleVis); library(XML); library(stringr)\nlibrary(httr)\n\nwebpage <- paste0(\"http://www.landofbasketball.com/\", \"championships/year_by_year.htm\")\n# data <- readHTMLTable(webpage,which = 1, stringsAsFactors = FALSE)\nLoB.temp.data <- readHTMLTable(rawToChar(GET(webpage)$content), header = T, stringsAsFactors = F)\nLoB.temp.data <- as.character(unlist(LoB.temp.data))\n\nsplit.data <- strsplit(LoB.temp.data, split='(\\n|\\t)')\n\nYear <- sapply(split.data, FUN = function (x) substr(x[[1]][1], 3, 7))\nWinner <- sapply(split.data,FUN = function (x) str_trim(x[[7]]))\nSeries <- sapply(split.data,FUN = function (x) str_trim(x[[11]]))\nOpponent <- sapply(split.data,FUN = function (x) str_trim(x[[13]]))\n\n\nLoB.data <- data.frame(Year=Year, Winner= Winner, Series=Series, Opponent=Opponent)\n\nchart3 <- gvisTable(LoB.data,\n                    options=list(\n                      height=500))\nplot(chart3)\n\n\n\n\n\n\n\n\n",
+    "created" : 1511984329521.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "581568845",
+    "id" : "3CD70AB7",
+    "lastKnownWriteTime" : 1544740199,
+    "last_content_update" : 1544740199541,
+    "path" : "~/My Files/Teachng/2018/Fall/Class 12/Sports Analytics/Sports Analytics Code/SportsAnalytics_Code.R",
+    "project_path" : "SportsAnalytics_Code.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

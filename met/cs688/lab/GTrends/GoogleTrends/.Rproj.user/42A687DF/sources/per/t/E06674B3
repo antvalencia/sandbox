@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541459821670.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "328644540",
+    "id" : "E06674B3",
+    "lastKnownWriteTime" : 1541468738,
+    "last_content_update" : 1541468738476,
+    "path" : "~/misc/code/met/cs688/midterm/Reuters.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "13,31",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

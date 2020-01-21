@@ -1,0 +1,9 @@
+{
+    "path" : "~/misc/code/met/cs688/lab/GTrends/GoogleTrends",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
